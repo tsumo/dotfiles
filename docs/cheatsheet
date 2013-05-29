@@ -1,0 +1,26 @@
+# Mount block device
+udisksctl mount --block-device /dev/sdb1
+udisksctl unmount --block-device /dev/sdb1
+
+# Convert text files to utf-8 encoding
+enca -L ru -c -x UTF-8 *.txt
+
+# Preload library
+LD_PRELOAD=/path/to/my/malloc.so /bin/ls
+
+# Check needed libraries
+ldd ./program
+
+# Search for file in repository
+pkgfile -s libz.so.1
+
+# Restart program and free terminal
+(tint2 & sleep 5s) & exit
+
+# Record desktop
+ffmpeg -f x11grab -s 1680x1050 -r 8 -i :0.0 -qscale 0 film.mkv
+
+# Get list of formats from youtube video
+youtube-dl -F URL
+# Download video in max quality
+youtube-dl --max-quality FORMAT -t URL
