@@ -1,0 +1,10 @@
+# Ignore everything
+*
+
+# Except...
+!.gitignore
+!.vimrc
+!.zshrc
+!docs/cheatsheet
+!docs/cheatsheet_vim
+
