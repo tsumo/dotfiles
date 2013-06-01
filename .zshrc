@@ -10,6 +10,9 @@ ZSH_THEME="af-magic"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias sudo="sudo "
+alias vi="vim"
+alias yogurt="yaourt"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -37,3 +40,7 @@ plugins=(git dircycle)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+
+export EDITOR=vim
+export STARDICT_DATA_DIR=/home/char/dic
+export SDCV_PAGER=/usr/bin/less
