@@ -1,3 +1,85 @@
+------------
+---pacman---
+------------
+$ pacman -S FOO		# Install package FOO
+$ pacman -Sg gnome	# See what packages belong to the gnome group
+$ pacman -Ss FOO	# Search for FOO in package database
+$ pacman -Qs FOO	# Search for already installed packages
+$ pacman -Si FOO	# Display information about package
+$ pacman -Qi FOO	# Display information about installed package
+$ pacman -Qii FOO	# Same as above + information about backup files
+$ pacman -Ql FOO	# Retrieve list of the files installed by package
+$ pacman -Qo ./file	# Query the database to see which package
+                    # a file in the system belongs to
+$ pacman -Qdt		# List orphaned packages
+$ pacman -Syu		# Update all packages
+$ pacman -Syu FOO	# Update all packages and then install new ones
+$ pacman -Sw FOO	# Download package without installing it
+$ pacman -Sc		# Clean package cache of packages
+                    # that are not currently installed
+$ pacman -Scc		# Clear entire package cache
+$ pacman -U ./FOO	# Install localy built packages
+$ pacman -R FOO		# Remove package
+$ pacman -Rs FOO	# Remove package and any of its dependancies
+                    # which are not required by any other package
+$ pacman -Rs $(pacman -Qdtq)	# Remove all orphaned packages
+$ pacman -Rn FOO	# Remove package without creating .pacsave backups
+$ pacman -Qm		# List all foreign (AUR) packages
+$ pactree FOO		# List dependency tree of a package
+$ whoneeds FOO		# List packages depending on a FOO
+
+# Do not refresh the package list without upgrading system
+# Like "pacman -Sy FOO" or "pacman -Sy; pacman -S FOO"
+# This can lead to dependency issues
+
+------------
+---yaourt---
+------------
+$ yaourt FOO		# Search/install package from AUR
+$ yaourt -Syua		# Upgrade all packages, including foreign
+
+------------------------------
+---Cyrillic font in console---
+------------------------------
+$ setfont ter-v16v
+
+----------
+---Time---
+----------
+$ htpd -qg	# Sync time without starting NTP daemon
+$ hwclock -w	# Save updated time in hardware clock
+
+--------------
+---Wireless---
+--------------
+$ iw dev wlan0 link			# Getting status of wlan0
+$ sudo iw dev wlan0 scan | less		# Scan wireless access points
+$ iw wlan0 set channel auto		# Automatic WLAN channel selection (interface must be down)
+$ iw wlan0 connect SSID			# Connect to access point without encryption
+$ iw wlan0 connest SSID 2432		# Connect to AP on frequency 2432
+$ iw wlan0 connect SSID keys 0:abcde d:1:0011223344	# Connect to AP using WEP
+$ iw wlan0 disconnect			# Disconnect from current network
+---for DHCP---
+$ dhcpcd wlan0
+---for static---
+$ ip addr add 192.168.0.2/24 dev wlan0
+$ ip route add default via 192.168.0.1
+
+--------------
+---Touchpad---
+--------------
+$ synclient TouchpadOff=1	# Disable touchpad using synaptics
+
+-----------
+---Video---
+-----------
+$ mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0
+
+-----------------------
+---Where the shit at---
+-----------------------
+/var/log/pacman.log	# Logged pacman's output
+
 # Mount block device
 udisksctl mount --block-device /dev/sdb1
 udisksctl unmount --block-device /dev/sdb1

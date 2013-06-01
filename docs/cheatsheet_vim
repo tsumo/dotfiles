@@ -1,0 +1,101 @@
+i - insert before the cursor
+I - insert at the start of the line
+a - append after the cursor
+A - append at the end of the line
+o - open a new line below
+O - open a new line above
+s - substitute one character and enter insert mode
+S - substitute whole line and enter insert mode
+r - replace one character
+R - enter replace mode
+
+~ - flip the case of the selected text
+
+w - move one word forward
+b - move one word back
+e - move to the end of the word
+( - move to the previous sentence
+) - move to the next sentence
+{ - move one paragraph back
+} - move one paragraph forward
+
+h - move cursor left
+l - move cursor right
+j - move cursor one line down
+k - move cursor one line up
+35j - move 35 lines down
+
+G - move to the last line
+1G - move to the first line
+50G - move to the 50th line
+
+f<character> - move to the next character in the line
+3fh - move to the third occurence of the h in the line
+
+ma - create a mark named 'a'
+'a - move to the mark named 'a'
+
+ctrl + o - jump back to previous location
+
+H - jump as high as possible (to the first line of the window)
+M - jump to the middle line of the window
+L - jump as low as possible (last line being displayed)
+
+^ - HOME
+$ - END
+ctrl + b - PGUP
+ctrl + f - PGDN
+
+v - enter visual mode
+V - enter line-based visual mode
+c - delete selected and enter insert mode
+ap - select by paragraph in visual mode
+aw - select by words in visual mode
+a" - select by quoted string in visual mode
+ab - select by block in visual mode
+
+x - delete character in current cursor position
+d<hjkl> - delete characters from current cursor position
+dw - delete word
+dd - delete current line
+yy - yank current line
+yap - yank current paragraph
+p - paste copied text after current cursor position
+P - paste copied text before current cursor position
+xp - swap two characters
+dwwp - swap two words
+
+u - undo changes
+ctrl + r - redo changes
+:earlier 4m - go back by 4 minutes
+:later 45s - go forward in time
+:undo 5 - undo 5 changes
+:undolist - view undo tree
+
+/str - search for a string
+n - jump to the next occurence of string
+N - jump to the previous occurence of the string
+/\<word\> - search for the exact word
+/\d - search for a digit
+/\d\+ - search for one or more digits
+/\d\* - search for zero or more digits
+
+zc - fold a section
+zo - open the fold
+za - open/close fold
+
+:swapname - view name of swapfile
+
+:help abbreviation - view help on abbreviations
+:help user-manual - view user manual
+:helpgrep <str> - search through help
+:cnext - jump to the next occurence of the word
+:cprev - jump to the previous occurence of the word
+:clist - see whole list of occurences
+
+:e filename - open file for editing / start new file
+:cd <str> - change current directory
+:pwd - view the name of the current directory
+:w [filename] - write changes to file
+ZZ - save changes and exit
+:q - exit vim
