@@ -1,0 +1,67 @@
+# Avoid flickering
+double_buffer yes
+
+# Own window to run simultaneously 2 or more conkys
+own_window yes
+
+# Can be normal, desktop, dock, panel or override
+own_window_type desktop
+
+# Set transparency
+own_window_transparent no
+
+# Fork conky in background on startup
+background yes
+
+# Anti-aliased font and stuff
+use_xft yes
+
+# Font to use
+xftfont Terminus:size=9
+
+# Add spaces around certain objects
+use_spacer none
+
+# Minimum size of the window
+minimum_size 935 64
+
+# Borders around text, shades and outlines
+draw_borders no
+draw_shades yes
+draw_outline yes
+
+# Position
+gap_x 0
+gap_y -37
+alignment top_middle
+
+# In seconds
+update_interval 2
+
+# Colors
+color1 cornflowerblue  # 6495ED
+color2 darkgrey        # A9A9A9
+color3 white           # FFFFFF
+color4 cyan
+color5 orange
+default_color cornflowerblue  # Defines color of graph borders
+
+TEXT
+# Line 1 (used for graphs)
+${goto 130}${voffset 40}${cpugraph cpu0 18, 50 FFFFFF FFFFFF} \
+${goto 312}${memgraph 18, 50 FFFFFF FFFFFF}${voffset -40}
+
+# Line 2
+${goto 5}${color1}Cpu 1: ${color3}${freq_g 1}GHz (${cpu cpu1}%) \
+${goto 194}${color1}Ram:  ${color3}${memmax} \
+${goto 380}${color1}Root: ${color3}${fs_free /} / ${fs_size /} \
+${goto 535}${color1}TopCPU1: ${color3}${top name 1}${goto 675}${top cpu 1}% \
+${goto 740}${color1}TopMEM1: ${color3}${top_mem name 1}${goto 900}${top_mem mem_res 1} \
+
+# Line 3
+${goto 5}${color1}Cpu 2: ${color3}${freq_g 2}GHz (${cpu cpu2}%) \
+${goto 194}${color1}Used: ${color3}${mem} (${memperc}%) \
+${goto 380}${color1}Home: ${color3}${fs_free /home} / ${fs_size /home} \
+${goto 535}${color1}TopCPU2: ${color3}${top name 2}${goto 675}${top cpu 2}% \
+${goto 740}${color1}TopMEM2: ${color3}${top_mem name 2}${goto 900}${top_mem mem_res 2} \
+
