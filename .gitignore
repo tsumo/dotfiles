@@ -5,6 +5,7 @@
 !.gitignore
 !.vimrc
 !.zshrc
+!.conkyrc
 !docs/cheatsheet
 !docs/cheatsheet_vim
 
