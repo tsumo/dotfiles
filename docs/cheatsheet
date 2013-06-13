@@ -43,6 +43,14 @@ $ yaourt -Syua		# Upgrade all packages, including foreign
 ------------------------------
 $ setfont ter-v16v
 
+---------
+---Git---
+---------
+$ git add file                      # Add new file to the repository
+$ git commit -a -m "comment here"   # Commit changes (locally)
+$ git push origin master            # Upload changes
+$ git pull origin master            # Download changes
+
 ----------
 ---Time---
 ----------

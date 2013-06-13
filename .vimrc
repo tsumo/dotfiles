@@ -28,3 +28,12 @@ set pastetoggle=<F2>
 " mapping cyrillic layout for normal mode
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
+" Shortcut '\l' to rapidly toggle 'set list'
+nmap <leader>l :set list!<CR>
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+" Invisible character colors
+highlight CursorLineNr cterm=none ctermfg=0 guifg=#073642
+highlight NonText cterm=none ctermfg=0 guifg=#073642
+highlight SpecialKey cterm=none ctermfg=0 guifg=#073642 ctermbg=8 guibg=#002b36
+
