@@ -23,11 +23,12 @@ set smartcase
 set smartcase
 
 " toggle auto-indenting for code paste
-set pastetoggle=<F2>
+set pastetoggle=<F2>     
 
 " mapping cyrillic layout for normal mode
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
+" ---Dealing with invisible characters---
 " Shortcut '\l' to rapidly toggle 'set list'
 nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
@@ -36,4 +37,10 @@ set listchars=tab:▸\ ,eol:¬
 highlight CursorLineNr cterm=none ctermfg=0 guifg=#073642
 highlight NonText cterm=none ctermfg=0 guifg=#073642
 highlight SpecialKey cterm=none ctermfg=0 guifg=#073642 ctermbg=8 guibg=#002b36
-
+" Highlight trailing whitespaces, but not while
+" typing in insert mode
+highlight ExtraWhitespace ctermbg=red guibg=red
+au ColorScheme * highlight ExtraWhitespace guibg=red
+au BufEnter * match ExtraWhitespace /\s\+$/
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhiteSpace /\s\+$/
