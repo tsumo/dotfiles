@@ -1,0 +1,54 @@
+[default]
+title="${filename}"
+
+# Force starting with centered window
+geometry=50%:50%
+
+ontop="yes"
+
+stop-screensaver="yes"
+# Execute a command every n seconds
+# heartbeat-cmd="foo"
+# heartbeat-interval="n"
+
+# Defining output methods
+vo="opengl-hq"
+ao="alsa"
+
+# Reset colors
+brightness=0
+contrast=0
+hue=0
+saturation=0
+
+# Reset volume
+volume=50
+
+# Defining streams priority
+alang="jp,jap,jpn,en,eng,ru,rus"
+slang="jp,jap,jpn,en,eng,ru,rus"
+
+# Screenshots
+screenshot-format=jpg
+screenshot-jpeg-quality=97
+screenshot-template="~/pics/shots/-RAW/[%tY.%tm.%td_%tH.%tM.%tS]-[%P]-%f"
+
+# OSD
+osd-font-size=30
+
+# Subtitles
+embeddedfonts
+subcp="enca:ru:cp1251"
+correct-pts # more accurate sub timing. does not work correctly with some demuxers and codecs
+mkv-subtitle-preroll # While seeking show subtitles which appeared earlier
+autosub-match="fuzzy"
+# sub-scale="5" # scales all subs, including ass, to the % of the screen size
+# osd-font-size="45" # default 45
+# sub-text-font-size="45" # default 45
+sub-gauss="1" # slight blur for image subtitles
+# sub-pos="90" # affects all subs, including ass
+# sub-text-margin-y="10" # default 10
+
+# Pretend to be a web browser, fixes playback with some streaming sites
+# User-agent="Mozilla/5.0"
+
