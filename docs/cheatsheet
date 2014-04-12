@@ -37,6 +37,7 @@ $ whoneeds FOO		# List packages depending on a FOO
 ------------
 $ yaourt FOO		# Search/install package from AUR
 $ yaourt -Syua		# Upgrade all packages, including foreign
+$ yaourt -C         # Manage *.pac* files
 
 ------------------------------
 ---Cyrillic font in console---
@@ -46,15 +47,30 @@ $ setfont ter-v16v
 ---------
 ---Git---
 ---------
-$ git add file                      # Add new file to the repository
-$ git commit -a -m "comment here"   # Commit changes (locally)
-$ git push origin master            # Upload changes
-$ git pull origin master            # Download changes
+$ git init                     # Initialize a new git repository
+$ git clone <repo>             # Clone repository to local machine
+$ git status                   # Current repository status
+$ git log                      # Show commit history
+$ git add <file>               # Add new file, "stage" it.
+$ git add .                    # "Stage" all changes
+$ git commit -a -m "comment"   # "Stage" and commit all changes (locally)
+$ git push origin master       # Upload changes
+$ git pull origin master       # Download changes
+$ git checkout <file>          # Revert changes in file to last commit
+
+1. Create repo on github
+2. Go to local repo folder
+3. Add a remote named origin
+    $ git remote add origin git@github.com:<user>/<repo>.git
+4. Push commits in master branch
+    $ git push -u origin master
+5. To pull changes from the origin repo:
+    $ git pull origin master
 
 ----------
 ---Time---
 ----------
-$ htpd -qg	# Sync time without starting NTP daemon
+$ ntpd -qg	# Sync time without starting NTP daemon
 $ hwclock -w	# Save updated time in hardware clock
 
 --------------
