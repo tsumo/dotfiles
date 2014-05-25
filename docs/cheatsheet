@@ -70,8 +70,8 @@ $ git checkout <file>          # Revert changes in file to last commit
 ----------
 ---Time---
 ----------
-$ ntpd -qg	# Sync time without starting NTP daemon
-$ hwclock -w	# Save updated time in hardware clock
+$ ntpd -ds      # Sync time without starting NTP daemon
+$ hwclock -w    # Save updated time in hardware clock
 
 --------------
 ---Wireless---
