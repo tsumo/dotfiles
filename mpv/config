@@ -38,7 +38,7 @@ osd-font-size=30
 
 # Subtitles
 embeddedfonts
-subcp="enca:ru:cp1251"
+sub-codepage="enca:ru:cp1251"
 correct-pts # more accurate sub timing. does not work correctly with some demuxers and codecs
 mkv-subtitle-preroll # While seeking show subtitles which appeared earlier
 autosub-match="fuzzy"
