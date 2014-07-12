@@ -41,7 +41,7 @@ embeddedfonts
 sub-codepage="enca:ru:cp1251"
 correct-pts # more accurate sub timing. does not work correctly with some demuxers and codecs
 mkv-subtitle-preroll # While seeking show subtitles which appeared earlier
-autosub-match="fuzzy"
+sub-auto-match="fuzzy"
 # sub-scale="5" # scales all subs, including ass, to the % of the screen size
 # osd-font-size="45" # default 45
 # sub-text-font-size="45" # default 45
