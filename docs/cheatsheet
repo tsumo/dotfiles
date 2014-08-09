@@ -130,3 +130,7 @@ ffmpeg -f x11grab -s 1680x1050 -r 8 -i :0.0 -qscale 0 film.mkv
 youtube-dl -F URL
 # Download video in max quality
 youtube-dl --max-quality FORMAT -t URL
+
+# Auto-zoom, fullscreen, recursive, random order
+feh -ZFrz .
+
