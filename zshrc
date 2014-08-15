@@ -37,7 +37,7 @@ ZSH_THEME="gallois"
 # much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment following line if you want to the command execution time stamp shown 
+# Uncomment following line if you want to the command execution time stamp shown
 # in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
@@ -75,3 +75,8 @@ alias upd="yaourt -Syua"
 alias pgrep="pgrep -a"
 
 export EDITOR=vim
+
+#  When searching for history entries in the line editor, do not display duplicates
+#  of a line previously found, even if the duplicates are not contiguous.
+setopt HIST_FIND_NO_DUPS
+
