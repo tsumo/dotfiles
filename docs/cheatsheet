@@ -53,6 +53,7 @@ $ git status                   # Current repository status
 $ git log                      # Show commit history
 $ git add <file>               # Add new file, "stage" it.
 $ git add .                    # "Stage" all changes
+$ git diff HEAD                # View all changes before commiting
 $ git commit -a -m "comment"   # "Stage" and commit all changes (locally)
 $ git push origin master       # Upload changes
 $ git pull origin master       # Download changes
@@ -113,6 +114,7 @@ enca -L ru -c -x UTF-8 *.txt
 
 # Preload library
 LD_PRELOAD=/path/to/my/malloc.so /bin/ls
+LD_LIBRARY_PATH=/path/to/libs ./program
 
 # Check needed libraries
 ldd ./program
