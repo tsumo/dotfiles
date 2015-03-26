@@ -100,6 +100,15 @@ $ synclient TouchpadOff=1	# Disable touchpad using synaptics
 -----------
 $ mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0
 
+-----------
+---Audio---
+-----------
+# flac to wav
+for i in *.flac ; do flac -d $i ; done
+
+# wav to hq variable bitrate mp3
+for i in *.wav ; do lame -V 0 $i ; done
+
 -----------------------
 ---Where the shit at---
 -----------------------
