@@ -64,8 +64,12 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLM
 " Navigating inside long lines
 map j gj
 map k gk
-map <up> g<up>
-map <down> g<down>
+
+" Breaking habits
+noremap <up> <NOP>
+noremap <down> <NOP>
+noremap <left> <NOP>
+noremap <right> <NOP>
 
 " Remember last cursor position when opening a file
 if has("autocmd")
@@ -75,8 +79,6 @@ endif
 " Moving lines up and down with Ctrl+[jk]
 nmap <C-k> ddkP
 nmap <C-j> ddp
-nmap <C-up> ddkP
-nmap <C-down> ddp
 
 " ---Invisible characters---
 " Shortcut '\l' to rapidly toggle 'set list'

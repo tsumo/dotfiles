@@ -53,6 +53,7 @@ $ git status                   # Current repository status
 $ git log                      # Show commit history
 $ git add <file>               # Add new file, "stage" it.
 $ git add .                    # "Stage" all changes
+$ git rm <file>                # Remove file from repository
 $ git diff HEAD                # View all changes before commiting
 $ git commit -a -m "comment"   # "Stage" and commit all changes (locally)
 $ git push origin master       # Upload changes
