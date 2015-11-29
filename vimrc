@@ -1,57 +1,43 @@
-" Lines of command history to remember
-set history=700
+set history=1000    " Lines of command history to remember
 
-" Enabling filetype plugins
+syntax on           " Syntax highlighting
+
+"========
+" COLORS
+"========
+set tabstop=4       " Show tabs as n spaces
+set softtabstop=4   " Number of spaces in tab when editing
+set expandtab       " Insert n spaces instead tab
 filetype plugin on
-filetype indent on
+filetype indent on  " Load file-specific indent files
+set autoindent
+set smartindent
+set shiftwidth=4    " Indent size
 
-" Syntax highlighting
-syntax on
-
-" Enables per-file formatting guidelines
-set modeline
-
-" Line numbering
-set number
-
-" Auto indent
-set ai
-
-" Smart indent
-set si
-
-" Wrap lines
-set wrap
-
-" Show tabs as n spaces
-set tabstop=4
-
-" Incomprehensible magic thingy
-" Allows to delete 4 spaces with one backspace press
-set softtabstop=4
-
-" Indent size
-set shiftwidth=4
-
-" Tab key inserts spaces
-set expandtab
-
-" Defines the number of context lines visible above and below cursor
-set scrolloff=3
-
-" Show all command autocompletion suggestions
-set wildmenu
+"====
+" UI
+"====
+set number          " Show line numbers
+set wrap            " Wrap lines
+set scrolloff=3     " Number of context lines visible above and below cursor
+set showcmd         " Show command in bottom bar
+set showmatch       " Highlight matching parenthesis
+set wildmenu        " Visual autocomplete for commands
 set wildmode=longest:full,full
+set lazyredraw      " Redraw only when we need to
 
-" Start searching as you type
-set incsearch
-
-" Highlight search patterns
-set hlsearch
-
+"========
+" SEARCH
+" =======
+set incsearch       " Start searching as you type
+set hlsearch        " Highlight search patterns
 " Automatically ignore case for lowercase searches,
 " case-sensitive for searches with uppercase letters
 set smartcase
+
+" Navigating inside long lines
+" map j gj
+" map k gk
 
 " Toggle auto-indenting for code paste in normal mode
 nnoremap <F2> :set invpaste paste?<CR>
@@ -61,15 +47,15 @@ set pastetoggle=<F2>
 " mapping cyrillic layout for normal mode
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
-" Navigating inside long lines
-map j gj
-map k gk
-
-" Breaking habits
+" No arrow keys
 noremap <up> <NOP>
+inoremap <up> <NOP>
 noremap <down> <NOP>
+inoremap <down> <NOP>
 noremap <left> <NOP>
+inoremap <left> <NOP>
 noremap <right> <NOP>
+inoremap <right> <NOP>
 
 " Remember last cursor position when opening a file
 if has("autocmd")
@@ -80,7 +66,9 @@ endif
 nmap <C-k> ddkP
 nmap <C-j> ddp
 
-" ---Invisible characters---
+"======================
+" INVISIBLE CHARACTERS
+"======================
 " Shortcut '\l' to rapidly toggle 'set list'
 nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
@@ -89,6 +77,7 @@ set listchars=tab:▸\ ,eol:¬
 highlight CursorLineNr cterm=none ctermfg=0 guifg=#073642
 highlight NonText cterm=none ctermfg=0 guifg=#073642
 highlight SpecialKey cterm=none ctermfg=0 guifg=#073642 ctermbg=8 guibg=#002b36
+
 " Highlight trailing whitespaces, but not while
 " typing in insert mode
 highlight ExtraWhitespace ctermbg=red guibg=red
