@@ -32,11 +32,6 @@ $ whoneeds FOO		# List packages depending on a FOO
 # Like "pacman -Sy FOO" or "pacman -Sy; pacman -S FOO"
 # This can lead to dependency issues
 
-------------------------------
----Cyrillic font in console---
-------------------------------
-$ setfont cyr-sun16
-
 ---------
 ---Git---
 ---------
@@ -167,6 +162,11 @@ for i in *.wav ; do lame -V 0 $i ; done
 ---Logs----
 -----------
 /var/log/pacman.log	# Logged pacman's output
+
+-------------------
+---Naked console---
+-------------------
+$ setfont cyr-sun16     # Change console font to one that supports cyrillic
 
 ----------
 ---Misc---
