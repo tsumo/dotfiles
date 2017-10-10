@@ -104,23 +104,50 @@ $ hwclock -w    # Save updated time in hardware clock
 --------------
 ---Wireless---
 --------------
-$ iw dev wlan0 link			# Getting status of wlan0
-$ sudo iw dev wlan0 scan | less		# Scan wireless access points
-$ iw wlan0 set channel auto		# Automatic WLAN channel selection (interface must be down)
-$ iw wlan0 connect SSID			# Connect to access point without encryption
-$ iw wlan0 connest SSID 2432		# Connect to AP on frequency 2432
-$ iw wlan0 connect SSID keys 0:abcde d:1:0011223344	# Connect to AP using WEP
-$ iw wlan0 disconnect			# Disconnect from current network
+$ iw dev WI-FI link			    # Getting status of wlan0
+# ip link set WI-FI up          # Enable specified interface
+$ sudo iw dev WI-FI scan | less		# Scan wireless access points
+$ iw WI-FI set channel auto		# Automatic channel selection (interface must be down)
+$ iw WI-FI connect SSID			# Connect to access point without encryption
+$ iw WI-FI connest SSID 2432		# Connect to AP on frequency 2432
+$ iw WI-FI connect SSID keys 0:abcde d:1:0011223344	# Connect to AP using WEP
+$ iw WI-FI disconnect			# Disconnect from current network
+---Wireless using netctl profiles
+$ netctl start PROFILENAME      # Connect using specified profile
+                                # Profiles are stored in "/etc/netctl"
+                                # Examples are in "etc/netctl/examples"
 ---for DHCP---
 $ dhcpcd wlan0
 ---for static---
 $ ip addr add 192.168.0.2/24 dev wlan0
 $ ip route add default via 192.168.0.1
 
+-----------------
+---Taskwarrior---
+-----------------
+$ task add Some task      # Add task to taskwarrior
+$ task list               # Show tasks
+$ task ID done            # Finish task with id 3
+$ task ID start           # Mark task as started
+
+---------
+---SQL---
+---------
+$ systemctl start mariadb   # to start sql server
+$ mysql -u root -p          # to connect to the sql server
+
+----------------
+---Copy-Paste---
+----------------
+$ cat FILE.TXT | xsel -i    # Copy piped text into X buffer
+$ xsel -o > FILE.TXT        # Paste from X buffer
+
 --------------
 ---Touchpad---
 --------------
-$ synclient TouchpadOff=1	# Disable touchpad using synaptics
+# xinput                # To find touchpad name and id
+$ xinput disable "SynPS/2 Synaptics TouchPad"       # Disable touchpad by name
+$ xinput --list-props "SynPS/2 Synaptics TouchPad"  # View all properties
 
 -----------
 ---Video---
@@ -136,11 +163,14 @@ for i in *.flac ; do flac -d $i ; done
 # wav to hq variable bitrate mp3
 for i in *.wav ; do lame -V 0 $i ; done
 
------------------------
----Where the shit at---
------------------------
+-----------
+---Logs----
+-----------
 /var/log/pacman.log	# Logged pacman's output
 
+----------
+---Misc---
+----------
 # Mount block device
 udisksctl mount --block-device /dev/sdb1
 udisksctl unmount --block-device /dev/sdb1
@@ -155,10 +185,7 @@ LD_LIBRARY_PATH=/path/to/libs ./program
 # Check needed libraries
 ldd ./program
 
-# Search for file in repository
-pkgfile -s libz.so.1
-
-# Restart program and free terminal
+# Start program and free terminal
 (tint2 & sleep 5s) & exit
 
 # Record desktop
@@ -169,6 +196,6 @@ youtube-dl -F URL
 # Download video in max quality
 youtube-dl --max-quality FORMAT -t URL
 
-# Auto-zoom, fullscreen, recursive, random order
+# Auto-zoom, fullscreen, recursive, random order in feh
 feh -ZFrz .
 
