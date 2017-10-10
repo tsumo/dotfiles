@@ -15,6 +15,7 @@ $ pacman -Qdt		# List orphaned packages
 $ pacman -Syu		# Update all packages
 $ pacman -Syu FOO	# Update all packages and then install new ones
 $ pacman -Sw FOO	# Download package without installing it
+$ pacman -Sg FOO    # View all packages in a specified group
 $ pacman -Sc		# Clean package cache of packages
                     # that are not currently installed
 $ pacman -Scc		# Clear entire package cache

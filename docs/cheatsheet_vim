@@ -45,6 +45,8 @@ L - jump as low as possible (last line being displayed)
 $ - END
 ctrl + b - PGUP
 ctrl + f - PGDN
+ctrl + u - half-page up
+ctrl + d - half-page down
 
 v - enter visual mode
 V - enter line-based visual mode
