@@ -2,12 +2,10 @@ set history=1000    " Lines of command history to remember
 
 syntax on           " Syntax highlighting
 
-"========
-" COLORS
-"========
 set tabstop=4       " Show tabs as n spaces
 set softtabstop=4   " Number of spaces in tab when editing
 set expandtab       " Insert n spaces instead tab
+
 filetype plugin on
 filetype indent on  " Load file-specific indent files
 set autoindent
@@ -17,9 +15,18 @@ set shiftwidth=4    " Indent size
 "====
 " UI
 "====
-set number          " Show line numbers
+" Absolute line numbers for insert mode and unfocused windows
+" Relative line numbers for normal mode
+set number relativenumber
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
+set ruler           " Show cursor position in bottom right corner
 set wrap            " Wrap lines
-set scrolloff=3     " Number of context lines visible above and below cursor
+set scrolloff=3     " Number of context lines visible above or below cursor
 set showcmd         " Show command in bottom bar
 set showmatch       " Highlight matching parenthesis
 set wildmenu        " Visual autocomplete for commands
