@@ -1,33 +1,33 @@
 ------------
 ---pacman---
 ------------
-$ pacman -S FOO		# Install package FOO
-$ pacman -Sg gnome	# See what packages belong to the gnome group
-$ pacman -Ss FOO	# Search for FOO in package database
-$ pacman -Qs FOO	# Search for already installed packages
-$ pacman -Si FOO	# Display information about package
-$ pacman -Qi FOO	# Display information about installed package
-$ pacman -Qii FOO	# Same as above + information about backup files
-$ pacman -Ql FOO	# Retrieve list of the files installed by package
-$ pacman -Qo ./file	# Query the database to see which package
+$ pacman -S FOO     # Install package FOO
+$ pacman -Sg gnome  # See what packages belong to the gnome group
+$ pacman -Ss FOO    # Search for FOO in package database
+$ pacman -Qs FOO    # Search for already installed packages
+$ pacman -Si FOO    # Display information about package
+$ pacman -Qi FOO    # Display information about installed package
+$ pacman -Qii FOO   # Same as above + information about backup files
+$ pacman -Ql FOO    # Retrieve list of the files installed by package
+$ pacman -Qo ./file # Query the database to see which package
                     # a file in the system belongs to
-$ pacman -Qdt		# List orphaned packages
-$ pacman -Syu		# Update all packages
-$ pacman -Syu FOO	# Update all packages and then install new ones
-$ pacman -Sw FOO	# Download package without installing it
+$ pacman -Qdt       # List orphaned packages
+$ pacman -Syu       # Update all packages
+$ pacman -Syu FOO   # Update all packages and then install new ones
+$ pacman -Sw FOO    # Download package without installing it
 $ pacman -Sg FOO    # View all packages in a specified group
-$ pacman -Sc		# Clean package cache of packages
+$ pacman -Sc        # Clean package cache of packages
                     # that are not currently installed
-$ pacman -Scc		# Clear entire package cache
-$ pacman -U ./FOO	# Install localy built packages
-$ pacman -R FOO		# Remove package
-$ pacman -Rs FOO	# Remove package and any of its dependancies
+$ pacman -Scc       # Clear entire package cache
+$ pacman -U ./FOO   # Install localy built packages
+$ pacman -R FOO     # Remove package
+$ pacman -Rs FOO    # Remove package and any of its dependancies
                     # which are not required by any other package
-$ pacman -Rs $(pacman -Qdtq)	# Remove all orphaned packages
-$ pacman -Rn FOO	# Remove package without creating .pacsave backups
-$ pacman -Qm		# List all foreign (AUR) packages
-$ pactree FOO		# List dependency tree of a package
-$ whoneeds FOO		# List packages depending on a FOO
+$ pacman -Rs $(pacman -Qdtq)    # Remove all orphaned packages
+$ pacman -Rn FOO    # Remove package without creating .pacsave backups
+$ pacman -Qm        # List all foreign (AUR) packages
+$ pactree FOO       # List dependency tree of a package
+$ whoneeds FOO      # List packages depending on a FOO
 
 # Do not refresh the package list without upgrading system
 # Like "pacman -Sy FOO" or "pacman -Sy; pacman -S FOO"
@@ -100,14 +100,14 @@ $ hwclock -w    # Save updated time in hardware clock
 --------------
 ---Wireless---
 --------------
-$ iw dev WI-FI link			    # Getting status of wlan0
+$ iw dev WI-FI link             # Getting status of wlan0
 # ip link set WI-FI up          # Enable specified interface
-$ sudo iw dev WI-FI scan | less		# Scan wireless access points
-$ iw WI-FI set channel auto		# Automatic channel selection (interface must be down)
-$ iw WI-FI connect SSID			# Connect to access point without encryption
-$ iw WI-FI connest SSID 2432		# Connect to AP on frequency 2432
-$ iw WI-FI connect SSID keys 0:abcde d:1:0011223344	# Connect to AP using WEP
-$ iw WI-FI disconnect			# Disconnect from current network
+$ sudo iw dev WI-FI scan | less # Scan wireless access points
+$ iw WI-FI set channel auto     # Automatic channel selection (interface must be down)
+$ iw WI-FI connect SSID         # Connect to access point without encryption
+$ iw WI-FI connest SSID 2432    # Connect to AP on frequency 2432
+$ iw WI-FI connect SSID keys 0:abcde d:1:0011223344     # Connect to AP using WEP
+$ iw WI-FI disconnect           # Disconnect from current network
 ---Wireless using netctl profiles
 $ netctl start PROFILENAME      # Connect using specified profile
                                 # Profiles are stored in "/etc/netctl"
@@ -162,7 +162,7 @@ for i in *.wav ; do lame -V 0 $i ; done
 -----------
 ---Logs----
 -----------
-/var/log/pacman.log	# Logged pacman's output
+/var/log/pacman.log     # Logged pacman's output
 
 -------------------
 ---Naked console---
