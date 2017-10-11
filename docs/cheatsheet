@@ -115,8 +115,12 @@ $ netctl start PROFILENAME      # Connect using specified profile
 ---for DHCP---
 $ dhcpcd wlan0
 ---for static---
+$ ip link set IF up
 $ ip addr add 192.168.0.2/24 dev wlan0
 $ ip route add default via 192.168.0.1
+---flush assigned ip and gateway---
+$ ip addr flush dev IF
+$ ip route flush dev IF
 
 -----------------
 ---Taskwarrior---
