@@ -28,10 +28,13 @@ set ruler           " Show cursor position in bottom right corner
 set wrap            " Wrap lines
 set scrolloff=3     " Number of context lines visible above or below cursor
 set showcmd         " Show command in bottom bar
+set showtabline=2   " Always show tab bar at the top
 set showmatch       " Highlight matching parenthesis
 set wildmenu        " Visual autocomplete for commands
 set wildmode=longest:full,full
 set lazyredraw      " Redraw only when we need to
+" Fix slow O inserts
+set timeout timeoutlen=1000 ttimeoutlen=100
 
 "========
 " SEARCH
@@ -92,3 +95,21 @@ au ColorScheme * highlight ExtraWhitespace guibg=red
 au BufEnter * match ExtraWhitespace /\s\+$/
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhiteSpace /\s\+$/
+
+"==================================================================
+" MULTIPURPOSE TAB KEY
+" Indent if we're at the beginning of a line. Else, do completion.
+" by garybernhardt
+"==================================================================
+
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <expr> <tab> InsertTabWrapper()
+inoremap <s-tab> <c-n>
+
