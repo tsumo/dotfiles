@@ -53,16 +53,22 @@ set pastetoggle=<F2>
 " mapping cyrillic layout for normal mode
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
-" No arrow keys
-" Allow only screen-line navigation in normal mode
+" Up and Down navigate inside long lines
+" Left and Right scroll window, keeping cursor
+" in the same line on screen
+" No arrow keys in insert and visual
 noremap <up> gk
-inoremap <up> <NOP>
 noremap <down> gj
+noremap <left> <C-y>gk
+noremap <right> <C-e>gj
+inoremap <up> <NOP>
 inoremap <down> <NOP>
-noremap <left> <NOP>
 inoremap <left> <NOP>
-noremap <right> <NOP>
 inoremap <right> <NOP>
+vnoremap <up> <NOP>
+vnoremap <down> <NOP>
+vnoremap <left> <NOP>
+vnoremap <right> <NOP>
 
 " Remember last cursor position when opening a file
 if has("autocmd")
