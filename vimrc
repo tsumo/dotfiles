@@ -45,10 +45,6 @@ set hlsearch        " Highlight search patterns
 " case-sensitive for searches with uppercase letters
 set smartcase
 
-" Navigating inside long lines
-" map j gj
-" map k gk
-
 " Toggle auto-indenting for code paste in normal mode
 nnoremap <F2> :set invpaste paste?<CR>
 " and in insert mode
@@ -57,15 +53,19 @@ set pastetoggle=<F2>
 " mapping cyrillic layout for normal mode
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
+" Navigating inside long lines
+map <Down> gj
+map <Up> gk
+
 " No arrow keys
-noremap <up> <NOP>
-inoremap <up> <NOP>
-noremap <down> <NOP>
-inoremap <down> <NOP>
-noremap <left> <NOP>
-inoremap <left> <NOP>
-noremap <right> <NOP>
-inoremap <right> <NOP>
+" noremap <up> <NOP>
+" inoremap <up> <NOP>
+" noremap <down> <NOP>
+" inoremap <down> <NOP>
+" noremap <left> <NOP>
+" inoremap <left> <NOP>
+" noremap <right> <NOP>
+" inoremap <right> <NOP>
 
 " Remember last cursor position when opening a file
 if has("autocmd")
