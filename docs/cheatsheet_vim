@@ -84,6 +84,7 @@ a"      : select by quoted string in visual mode
 ab      : select by block in visual mode
 !sort       : sort selected using external program
 !grep word  : keep only lines containing word
+<C-v><C-i>  : select block of text, insert in selected block
 
 x   : delete character in current cursor position
 dw  : delete word
