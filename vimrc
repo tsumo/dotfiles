@@ -3,14 +3,15 @@ set history=1000    " Lines of command history to remember
 syntax on           " Syntax highlighting
 
 set tabstop=4       " Show tabs as n spaces
-set softtabstop=4   " Number of spaces in tab when editing
+set softtabstop=4   " Number of spaces to insert with TAB or delete with BS
 set expandtab       " Insert n spaces instead tab
+set shiftwidth=4    " Indent size for normal mode commands
+
+set autoindent      " Copy indent from current line to new line
+set smartindent
 
 filetype plugin on
 filetype indent on  " Load file-specific indent files
-set autoindent
-set smartindent
-set shiftwidth=4    " Indent size
 
 "====
 " UI

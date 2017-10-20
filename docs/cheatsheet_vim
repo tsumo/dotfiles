@@ -114,6 +114,12 @@ zc  : fold a section
 zo  : open the fold
 za  : open/close fold
 
+vimdiff file1 file2 : compare files
+dp  : put changes under cursor to the other file
+do  : changes under cursor get replaced by the content of the other file
+]c  : next diff
+[c  : prev diff
+
 :swapname   : view name of swapfile
 
 :help abbreviation  : view help on abbreviations
