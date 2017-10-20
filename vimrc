@@ -13,6 +13,10 @@ set smartindent
 filetype plugin on
 filetype indent on  " Load file-specific indent files
 
+" Place to store .swp files
+" Double slash protects from filename conflicts
+set directory=~/.vim/tmp//,/var/tmp//,/tmp//
+
 "====
 " UI
 "====
