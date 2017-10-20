@@ -47,6 +47,7 @@ $ git diff HEAD                # View all changes before commiting
 $ git commit -a -m "comment"   # "Stage" and commit all changes (locally)
 $ git push origin master       # Upload changes
 $ git pull origin master       # Download changes
+$ git fetch origin             # Update local remote to the latest version
 $ git checkout <file>          # Revert changes in file to last commit
 
 1. Create repo on github
