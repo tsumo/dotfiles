@@ -50,6 +50,7 @@ $ git pull origin master       # Download changes
 $ git fetch origin             # Update local remote to the latest version
 $ git checkout <file>          # Revert changes in file to last commit
 
+GitHub - new repo
 1. Create repo on github
 2. Go to local repo folder
 3. Add a remote named origin
@@ -58,6 +59,15 @@ $ git checkout <file>          # Revert changes in file to last commit
     $ git push -u origin master
 5. To pull changes from the origin repo:
     $ git pull origin master
+
+GitHub - start editing published repo
+1. Clone origin
+    $ git clone <repo>
+2. Configure user credentials for proper logging of changes
+   and mask real email with the one provided by github
+    $ cd <repo folder>
+    $ git config user.name <username_on_github>
+    $ git config user.email <username_on_github>@users.noreply.github.com
 
 ----------
 ---tmux---
