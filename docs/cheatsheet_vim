@@ -85,6 +85,7 @@ ab      : select by block in visual mode
 !sort       : sort selected using external program
 !grep word  : keep only lines containing word
 <C-v><C-i>  : select block of text, insert in selected block
+<C-v><S-i>  : select a column and insert in each line
 
 x   : delete character in current cursor position
 dw  : delete word
