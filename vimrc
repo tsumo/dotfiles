@@ -45,13 +45,29 @@ set timeout timeoutlen=1000 ttimeoutlen=100
 "============
 " STATUSLINE
 "============
+" Shortcut '\g' to toggle current git branch in statusline
+nmap <leader>g :call StatuslineGitToggle()<CR>
+
 function! GitBranch()
-	return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+    return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+let g:StatuslineGitIsOn = 1
+
+function! StatuslineGitToggle()
+    if g:StatuslineGitIsOn
+        let g:StatuslineGitIsOn = 0
+    else
+        let g:StatuslineGitIsOn = 1
+    endif
 endfunction
 
 function! StatuslineGit()
-	let l:branchname = GitBranch()
-	return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+    if g:StatuslineGitIsOn
+        let l:branchname = GitBranch()
+        return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+    endif
+    return ''
 endfunction
 
 set statusline=
@@ -106,7 +122,7 @@ vnoremap <right> <NOP>
 
 " Remember last cursor position when opening a file
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
 "======================
