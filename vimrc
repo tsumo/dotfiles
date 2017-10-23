@@ -57,8 +57,10 @@ let g:StatuslineGitIsOn = 1
 function! StatuslineGitToggle()
     if g:StatuslineGitIsOn
         let g:StatuslineGitIsOn = 0
+        echo "Statusline Git is off"
     else
         let g:StatuslineGitIsOn = 1
+        echo "Statusline Git is on"
     endif
 endfunction
 
