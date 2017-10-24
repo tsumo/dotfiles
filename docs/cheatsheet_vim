@@ -131,6 +131,7 @@ do  : changes under cursor get replaced by the content of the other file
 :clist      : see whole list of occurences
 
 :e filename : open file for editing / start new file
+:e ++enc=<encoding>     : reopen file with another encoding
 :n          : next file in argument list
 :prev       : previous file in argument list
 :cd <str>   : change current directory
