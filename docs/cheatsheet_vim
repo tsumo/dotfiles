@@ -132,6 +132,7 @@ do  : changes under cursor get replaced by the content of the other file
 
 :e filename : open file for editing / start new file
 :e ++enc=<encoding>     : reopen file with another encoding
+:set fileencoding=<enc> : change encoding of the file
 :n          : next file in argument list
 :prev       : previous file in argument list
 :cd <str>   : change current directory
