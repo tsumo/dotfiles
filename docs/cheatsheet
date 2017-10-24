@@ -102,6 +102,17 @@ Prefix + space  # Switch layout of panes
 3. Start selection with v
 4. Yank selection with y
 
+--------------
+---rtorrent---
+--------------
+<Enter>         # Add .torrent file, doesn't start automatically
+<Backspace>     # Add .torrent file, start downloading
+<Ctrl + s>      # Start download
+<Ctrl + d>      # Stop active, remove stopped
+<Ctrl + k>      # Stop and close file of active download
+<Ctrl + r>      # Re-hash, download missing
+<Ctrl + q>      # Exit. Double tap to exit immediately
+
 ----------
 ---Time---
 ----------
