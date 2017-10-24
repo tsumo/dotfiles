@@ -67,14 +67,14 @@ endfunction
 function! StatuslineGit()
     if g:StatuslineGitIsOn
         let l:branchname = GitBranch()
-        return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+        return strlen(l:branchname) > 0?'  '.l:branchname:''
     endif
     return ''
 endfunction
 
 set statusline=
 set statusline+=%{StatuslineGit()}  " git branch
-set statusline+=%<%f\ (%{&ft})      " filename, filetype
+set statusline+=\ %<%f\ (%{&ft})      " filename, filetype
 set statusline+=\ %-4(%m%)          " modified flag
 set statusline+=%=%-19(%3l,%02c%03V%)   " ruler
 
