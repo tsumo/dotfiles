@@ -1,7 +1,5 @@
 set history=1000    " Lines of command history to remember
 
-syntax on           " Syntax highlighting
-
 set tabstop=4       " Show tabs as n spaces
 set softtabstop=4   " Number of spaces to insert with TAB or delete with BS
 set expandtab       " Insert n spaces instead tab
@@ -20,15 +18,7 @@ set directory=~/.vim/tmp//,/var/tmp//,/tmp//
 "====
 " UI
 "====
-" Absolute line numbers for insert mode and unfocused windows
-" Relative line numbers for normal mode
-set number relativenumber
-augroup numbertoggle
-    autocmd!
-    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-augroup END
-
+syntax on           " Syntax highlighting
 set ruler           " Show cursor position in bottom right corner
 set wrap            " Wrap lines
 set scrolloff=3     " Number of context lines visible above or below cursor
@@ -41,6 +31,71 @@ set wildmode=longest:full,full
 set lazyredraw      " Redraw only when we need to
 " Fix slow O inserts
 set timeout timeoutlen=1000 ttimeoutlen=100
+
+" Absolute line numbers for insert mode and unfocused windows
+" Relative line numbers for normal mode
+set number relativenumber
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
+" Remember last cursor position when opening a file
+if has("autocmd")
+    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+"===========
+" SHORTCUTS
+"===========
+" Toggle auto-indenting for code paste in normal mode
+nnoremap <F2> :set invpaste paste?<CR>
+" and in insert mode
+set pastetoggle=<F2>
+
+" Shortcut '\n' to stop highlighting searches
+nmap <leader>n :nohl<CR>
+
+" Moving lines up and down with Ctrl+up/down
+nmap <C-Up> ddkP
+nmap <C-Down> ddp
+
+" Navigating between splits with Ctrl+hjkl
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" Up and Down navigate inside long lines
+" Left and Right scroll window, keeping cursor
+" in the same line on screen
+" No arrow keys in insert and visual
+noremap <up> gk
+noremap <down> gj
+noremap <left> <C-y>gk
+noremap <right> <C-e>gj
+inoremap <up> <NOP>
+inoremap <down> <NOP>
+inoremap <left> <NOP>
+inoremap <right> <NOP>
+vnoremap <up> <NOP>
+vnoremap <down> <NOP>
+vnoremap <left> <NOP>
+vnoremap <right> <NOP>
+
+" mapping cyrillic layout for normal mode
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+
+"========
+" SEARCH
+"========
+set incsearch       " Start searching as you type
+set hlsearch        " Highlight search patterns
+" Automatically ignore case for lowercase searches,
+" case-sensitive for searches with uppercase letters
+set ignorecase
+set smartcase
 
 "============
 " STATUSLINE
@@ -77,56 +132,6 @@ set statusline+=%{StatuslineGit()}  " git branch
 set statusline+=\ %<%f\ (%{&ft})      " filename, filetype
 set statusline+=\ %-4(%m%)          " modified flag
 set statusline+=%=%-19(%3l,%02c%03V%)   " ruler
-
-"========
-" SEARCH
-"========
-set incsearch       " Start searching as you type
-set hlsearch        " Highlight search patterns
-" Automatically ignore case for lowercase searches,
-" case-sensitive for searches with uppercase letters
-set ignorecase
-set smartcase
-
-" Toggle auto-indenting for code paste in normal mode
-nnoremap <F2> :set invpaste paste?<CR>
-" and in insert mode
-set pastetoggle=<F2>
-
-" mapping cyrillic layout for normal mode
-set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
-
-" Moving lines up and down with Ctrl+up/down
-nmap <C-Up> ddkP
-nmap <C-Down> ddp
-
-" Navigating between splits with Ctrl+hjkl
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-
-" Up and Down navigate inside long lines
-" Left and Right scroll window, keeping cursor
-" in the same line on screen
-" No arrow keys in insert and visual
-noremap <up> gk
-noremap <down> gj
-noremap <left> <C-y>gk
-noremap <right> <C-e>gj
-inoremap <up> <NOP>
-inoremap <down> <NOP>
-inoremap <left> <NOP>
-inoremap <right> <NOP>
-vnoremap <up> <NOP>
-vnoremap <down> <NOP>
-vnoremap <left> <NOP>
-vnoremap <right> <NOP>
-
-" Remember last cursor position when opening a file
-if has("autocmd")
-    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
 
 "======================
 " INVISIBLE CHARACTERS
