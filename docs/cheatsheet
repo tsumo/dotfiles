@@ -36,34 +36,46 @@ $ whoneeds FOO      # List packages depending on a FOO
 ---------
 ---Git---
 ---------
-$ git init                      # Initialize a new git repository
-$ git clone <repo>              # Clone repository to local machine
-$ git status                    # Current repository status
-$ git add <file>                # Start tracking new file or stage modified file
-$ git add .                     # Stage all changes, recursively from the path
-$ git rm <file>                 # Stop tracking file and remove it from working directory
-$ git rm --cached <file>        # Stop tracking file, but keep it in working directory
-$ git mv <from> <to>            # Rename file, stage this change
-$ git diff                      # View all unstaged changes
-$ git diff HEAD                 # View all changes before commiting
-$ git diff --staged             # View staged changes before commiting
-$ git commit -m "comment"       # Commit staged changes
-$ git commit -a -m "comment"    # Stage all modified tracked files and commit
-$ git push origin master        # Upload changes
-$ git pull origin master        # Download changes
-$ git fetch origin              # Update local remote to the latest version
-$ git checkout <file>           # Revert changes in file to last commit
+$ git init              # Initialize a new git repository
+$ git clone <repo>      # Clone repository to local machine
+$ git status            # Current repository status
+
+$ git add <file>            # Start tracking new file or stage modified file
+$ git add .                 # Stage all changes, recursively from the path
+$ git reset HEAD <file>     # Unstage modified file
+$ git checkout -- <file>    # Completely discard changes to file, revert back to last commit
+$ git rm <file>             # Stop tracking file and remove it from working directory
+$ git rm --cached <file>    # Stop tracking file, but keep it in working directory
+$ git mv <from> <to>        # Rename file, stage this change
+
+$ git diff                  # View all unstaged changes
+$ git diff HEAD             # View all changes before commiting
+$ git diff --staged         # View staged changes before commiting
+
+$ git commit                # Commit staged changes, prompt for commit message
+$ git commit -m "comment"   # Commit staged changes with one-line message
+$ git commit -a             # Stage all modified tracked files and commit
+$ git commit --amend        # Replace last commit, useful for fixing small errors before pushing
+
+$ git remote                        # Show all remotes
+$ git remote -v                     # Show all remotes with respective urls
+$ git remote add <shortname> <url>  # Add new remote
+
+$ git push <remote> <branch>    # Upload changes
+$ git pull <remote> <branch>    # Fetch and merge remote branch into current branch
+$ git fetch <remote>            # Update local remote to the latest version
+
 $ git log                       # Show commits chronologically
 $ git log -<number>             # Show only n latest commits
-$ git log --since=2.weeks       # Time-limiting option
+$ git log --since=2.weeks       # Time-limiting option - after certain date
 $ git log --until=<YYYY-MM-DD>  # Date can also be relative as "1 year 3 days ago"
 $ git log --grep=<string>       # Search for specific word in commit messages
 $ git log -S <string>           # Show commits that changed the number of occurences of string
 $ git log -p                    # Show commits with diffs included
 $ git log --stat                # Show commits with summary of changes
 $ git log --pretty=oneline      # Other formats [short | full | fuller]
-$ git log --pretty=format:"%h - %an, %ar : %s"      # Specify your own output format
 $ git log --graph               # Show commits as graph
+$ git log --pretty=format:"%h - %an, %ar : %s"      # Specify your own output format
 
 GitHub - new repo
 1. Create repo on github
