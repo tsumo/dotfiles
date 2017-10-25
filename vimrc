@@ -85,6 +85,7 @@ set incsearch       " Start searching as you type
 set hlsearch        " Highlight search patterns
 " Automatically ignore case for lowercase searches,
 " case-sensitive for searches with uppercase letters
+set ignorecase
 set smartcase
 
 " Toggle auto-indenting for code paste in normal mode
