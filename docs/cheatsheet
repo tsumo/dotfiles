@@ -40,10 +40,12 @@ $ git init                     # Initialize a new git repository
 $ git clone <repo>             # Clone repository to local machine
 $ git status                   # Current repository status
 $ git log                      # Show commit history
-$ git add <file>               # Add new file, "stage" it.
-$ git add .                    # "Stage" all changes
+$ git add <file>               # Start tracking new file, stage modified file
+$ git add .                    # Stage all changes, recursively from the path
 $ git rm <file>                # Remove file from repository
+$ git diff                     # View all unstaged changes
 $ git diff HEAD                # View all changes before commiting
+$ git diff --staged            # View staged changes before commiting
 $ git commit -a -m "comment"   # "Stage" and commit all changes (locally)
 $ git push origin master       # Upload changes
 $ git pull origin master       # Download changes
