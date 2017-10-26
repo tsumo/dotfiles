@@ -36,7 +36,7 @@ $ whoneeds FOO      # List packages depending on a FOO
 ---------
 ---Git---
 ---------
-$ git init              # Initialize a new git repository
+$ git init              # Initialize a new git repository in current directory
 $ git clone <repo>      # Clone repository to local machine
 $ git status            # Current repository status
 
@@ -49,21 +49,36 @@ $ git rm --cached <file>    # Stop tracking file, but keep it in working directo
 $ git mv <from> <to>        # Rename file, stage this change
 
 $ git diff                  # View all unstaged changes
-$ git diff HEAD             # View all changes before commiting
 $ git diff --staged         # View staged changes before commiting
+           --cached
 
 $ git commit                # Commit staged changes, prompt for commit message
-$ git commit -m "comment"   # Commit staged changes with one-line message
+$ git commit -m <comment>   # Commit staged changes with one-line message
 $ git commit -a             # Stage all modified tracked files and commit
 $ git commit --amend        # Replace last commit, useful for fixing small errors before pushing
 
 $ git remote                        # Show all remotes
 $ git remote -v                     # Show all remotes with respective urls
 $ git remote add <shortname> <url>  # Add new remote
+$ git remote show <remote>          # Show remote info - urls, branches and such
+$ git remote rename <old> <new>     # Rename a remote
+$ git remote remove <remote>        # Remove remote and all remote-tracking branches
 
 $ git push <remote> <branch>    # Upload changes
 $ git pull <remote> <branch>    # Fetch and merge remote branch into current branch
 $ git fetch <remote>            # Update local remote to the latest version
+
+$ git tag                   # List all tags in alphabetical order
+$ git tag -l <string>       # Search in tag names
+$ git tag <name>            # Create lightweight tag for current commit
+$ git tag -a <name>         # Create annotated tag for current commit, prompt for description
+$ git tag -a <n> -m <comment>   # As above, but with one-line description
+$ git tag <name> <commit>       # Tag can be applied to any past commit
+$ git show <tag>                # Show info about tag
+$ git push <remote> <tag>       # Explicitly push tags to the remote
+$ git push <remote> --tags      # Push all tags to the remote
+$ git checkout <tag>            # View versions of files a tag is pointing to,
+                                # puts repo in "detached HEAD" state
 
 $ git log                       # Show commits chronologically
 $ git log -<number>             # Show only n latest commits
@@ -73,11 +88,26 @@ $ git log --grep=<string>       # Search for specific word in commit messages
 $ git log -S <string>           # Show commits that changed the number of occurences of string
 $ git log -p                    # Show commits with diffs included
 $ git log --stat                # Show commits with summary of changes
-$ git log --pretty=oneline      # Other formats [short | full | fuller]
 $ git log --graph               # Show commits as graph
+$ git log --pretty=oneline      # Other formats [short | full | fuller]
 $ git log --pretty=format:"%h - %an, %ar : %s"      # Specify your own output format
 
-GitHub - new repo
+$ git config --list             # List all settings for repo
+$ git config user.name <name>   # Set user name for current repo
+$ git config user.email <name>  # Set user email for current repo
+$ git config core.editor <ed>   # Set default text editor for current repo
+$ git config --global user.name <name>  # Settings can be set globally for all repos
+                                        # without local settings
+
+---Examples of aliases for common commands---
+$ git config --global alias.co  checkout
+$ git config --global alias.br  branch
+$ git config --global alias.st  status
+$ git config --global alias.unstage 'reset HEAD --'
+$ git config --global alias.last 'log -1 head'
+$ git config --global alias.visual '!gitk'
+
+---GitHub - new repo---
 1. Create repo on github
 2. Go to local repo folder
 3. Add a remote named origin
@@ -87,7 +117,7 @@ GitHub - new repo
 5. To pull changes from the origin repo:
     $ git pull origin master
 
-GitHub - start editing published repo
+---GitHub - start editing published repo---
 1. Clone origin
     $ git clone <repo>
 2. Configure user credentials for proper logging of changes

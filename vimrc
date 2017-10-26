@@ -46,6 +46,29 @@ if has("autocmd")
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
+"========
+" SPLITS
+"========
+"Open new split panels to right and bottom
+set splitbelow
+set splitright
+
+" Navigating between splits with Ctrl+hjkl
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" Resize splits with Shift+arrows
+" Up increases current buffer height
+" Down decreases current buffer height
+nnoremap <silent> <S-Up> :resize +3<CR>
+nnoremap <silent> <S-Down> :resize -3<CR>
+" Right increases current buffer width
+" Left decreases current buffer width
+nnoremap <silent> <S-Right> :vertical resize +5<CR>
+nnoremap <silent> <S-Left> :vertical resize -5<CR>
+
 "===========
 " SHORTCUTS
 "===========
@@ -61,28 +84,22 @@ nmap <leader>n :nohl<CR>
 nmap <C-Up> ddkP
 nmap <C-Down> ddp
 
-" Navigating between splits with Ctrl+hjkl
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-
 " Up and Down navigate inside long lines
 " Left and Right scroll window, keeping cursor
 " in the same line on screen
 " No arrow keys in insert and visual
-noremap <up> gk
-noremap <down> gj
-noremap <left> <C-y>gk
-noremap <right> <C-e>gj
-inoremap <up> <NOP>
-inoremap <down> <NOP>
-inoremap <left> <NOP>
-inoremap <right> <NOP>
-vnoremap <up> <NOP>
-vnoremap <down> <NOP>
-vnoremap <left> <NOP>
-vnoremap <right> <NOP>
+noremap <Up> gk
+noremap <Down> gj
+noremap <Left> <C-y>gk
+noremap <Right> <C-e>gj
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
+vnoremap <Up> <NOP>
+vnoremap <Down> <NOP>
+vnoremap <Left> <NOP>
+vnoremap <Right> <NOP>
 
 " mapping cyrillic layout for normal mode
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
