@@ -42,6 +42,8 @@ $ git status            # Current repository status
 
 $ git add <file>            # Start tracking new file or stage modified file
 $ git add .                 # Stage all changes, recursively from the path
+$ git add --patch <file>    # Stage changes in file hunk by hunk
+
 $ git reset HEAD <file>     # Unstage modified file
 $ git checkout -- <file>    # Completely discard changes to file, revert back to last commit
 $ git rm <file>             # Stop tracking file and remove it from working directory
@@ -55,7 +57,13 @@ $ git diff --staged         # View staged changes before commiting
 $ git commit                # Commit staged changes, prompt for commit message
 $ git commit -m <comment>   # Commit staged changes with one-line message
 $ git commit -a             # Stage all modified tracked files and commit
-$ git commit --amend        # Replace last commit, useful for fixing small errors before pushing
+$ git commit --amend        # Squash changes in index into the previous commit,
+                            # useful for fixing small errors before pushing
+
+$ git branch <name>     # Create new branch pointing to the current commit
+
+$ git checkout <branch>     # Switch to another branch, changing files in working directory
+$ git checkout -b <branch>  # Create new branch and switch to it
 
 $ git remote                        # Show all remotes
 $ git remote -v                     # Show all remotes with respective urls
@@ -88,9 +96,13 @@ $ git log --grep=<string>       # Search for specific word in commit messages
 $ git log -S <string>           # Show commits that changed the number of occurences of string
 $ git log -p                    # Show commits with diffs included
 $ git log --stat                # Show commits with summary of changes
+$ git log --decorate            # Show ref names for commits
 $ git log --graph               # Show commits as graph
 $ git log --pretty=oneline      # Other formats [short | full | fuller]
-$ git log --pretty=format:"%h - %an, %ar : %s"      # Specify your own output format
+
+# Hash, author date, comment, commit decorations, author name.
+# Shows commits as a graph, with short date format, one commit per line
+$ git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
 
 $ git config --list             # List all settings for repo
 $ git config user.name <name>   # Set user name for current repo
