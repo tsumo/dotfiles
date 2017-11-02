@@ -46,6 +46,7 @@ $ git add --patch <file>    # Stage changes in file hunk by hunk
 
 $ git reset HEAD <file>     # Unstage modified file
 $ git checkout -- <file>    # Completely discard changes to file, revert back to last commit
+$ git reset --hard          # Undo all changes since last commit
 $ git rm <file>             # Stop tracking file and remove it from working directory
 $ git rm --cached <file>    # Stop tracking file, but keep it in working directory
 $ git mv <from> <to>        # Rename file, stage this change
@@ -116,8 +117,10 @@ $ git config --list             # List all settings for repo
 $ git config user.name <name>   # Set user name for current repo
 $ git config user.email <name>  # Set user email for current repo
 $ git config core.editor <ed>   # Set default text editor for current repo
-$ git config --global user.name <name>  # Settings can be set globally for all repos
-                                        # without local settings
+$ git config diff.tool vimdiff  # Set tool for difftool command
+$ git config --add difftool.prompt false    # Disable difftool prompt
+$ git config --global user.name <name>      # Settings can be set globally for all repos
+                                            # without local settings
 
 ---Examples of aliases for common commands---
 $ git config --global alias.co  checkout

@@ -77,7 +77,7 @@ nnoremap <F2> :set invpaste paste?<CR>
 " and in insert mode
 set pastetoggle=<F2>
 
-" Shortcut '\n' to stop highlighting searches
+" Stop highlighting searches
 nmap <leader>n :nohl<CR>
 
 " Moving lines up and down with Ctrl+up/down
@@ -117,7 +117,7 @@ set smartcase
 "============
 " STATUSLINE
 "============
-" Shortcut '\g' to toggle current git branch in statusline
+" Toggle current git branch in statusline
 nmap <leader>g :call StatuslineGitToggle()<CR>
 
 function! GitBranch()
@@ -153,7 +153,7 @@ set statusline+=%=%-19(%3l,%02c%03V%)   " ruler
 "======================
 " INVISIBLE CHARACTERS
 "======================
-" Shortcut '\l' to rapidly toggle 'set list'
+" Toggle invisible characters
 nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
