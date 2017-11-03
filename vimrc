@@ -32,6 +32,7 @@ set showmatch       " Highlight matching parenthesis
 set wildmenu        " Visual autocomplete for commands
 set wildmode=longest:full,full
 set lazyredraw      " Redraw only when we need to
+set shortmess+=I    " Don't display intro message
 " Fix slow O inserts
 set timeout timeoutlen=1000 ttimeoutlen=100
 
@@ -163,7 +164,7 @@ nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 " Invisible character colors
-highlight NonText cterm=none ctermfg=0 guifg=#b58900
+highlight NonText cterm=none ctermfg=0 guifg=#cb4b16
 " highlight CursorLineNr cterm=none ctermfg=0 guifg=#b58900
 " highlight SpecialKey cterm=none ctermfg=0 guifg=#b58900 ctermbg=8 guibg=#b58900
 
