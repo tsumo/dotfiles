@@ -163,9 +163,9 @@ nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 " Invisible character colors
-" highlight CursorLineNr cterm=none ctermfg=0 guifg=#b58900
 highlight NonText cterm=none ctermfg=0 guifg=#b58900
-highlight SpecialKey cterm=none ctermfg=0 guifg=#b58900 ctermbg=8 guibg=#b58900
+" highlight CursorLineNr cterm=none ctermfg=0 guifg=#b58900
+" highlight SpecialKey cterm=none ctermfg=0 guifg=#b58900 ctermbg=8 guibg=#b58900
 
 " Highlight trailing whitespaces, but not while
 " typing in insert mode
