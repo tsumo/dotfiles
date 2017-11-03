@@ -8,6 +8,8 @@ set shiftwidth=4    " Indent size for normal mode commands
 set autoindent      " Copy indent from current line to new line
 set smartindent
 
+set termguicolors   " For colorschemes
+
 filetype plugin on
 filetype indent on  " Load file-specific indent files
 
@@ -19,6 +21,7 @@ set directory=~/.vim/tmp//,/var/tmp//,/tmp//
 " UI
 "====
 syntax on           " Syntax highlighting
+colorscheme solarized8_dark
 set ruler           " Show cursor position in bottom right corner
 set wrap            " Wrap lines
 set scrolloff=3     " Number of context lines visible above or below cursor
@@ -45,6 +48,8 @@ augroup END
 if has("autocmd")
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+
+colorscheme solarized8_dark
 
 "========
 " SPLITS
@@ -158,9 +163,9 @@ nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 " Invisible character colors
-highlight CursorLineNr cterm=none ctermfg=0 guifg=#073642
-highlight NonText cterm=none ctermfg=0 guifg=#073642
-highlight SpecialKey cterm=none ctermfg=0 guifg=#073642 ctermbg=8 guibg=#002b36
+" highlight CursorLineNr cterm=none ctermfg=0 guifg=#b58900
+highlight NonText cterm=none ctermfg=0 guifg=#b58900
+highlight SpecialKey cterm=none ctermfg=0 guifg=#b58900 ctermbg=8 guibg=#b58900
 
 " Highlight trailing whitespaces, but not while
 " typing in insert mode
