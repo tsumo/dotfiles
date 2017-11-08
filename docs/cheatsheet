@@ -64,6 +64,12 @@ $ git commit --amend        # Squash changes in index into the previous commit,
 $ git checkout <branch>     # Switch to another branch, changing files in working directory
 $ git checkout -b <branch>  # Create new branch and switch to it
 
+# Start a local branch based on the remote branch
+# Creates a tracking branch, associated with remote branch
+# Git will automatically know which server to fetch from and branch to merge into
+$ git checkout -b <branch> <remote>/<remote-branch>
+$ git checkout --track <remote>/<remote-branch>
+
 $ git branch                # Show all branches
 $ git branch -v             # Show all branches and their last commits
 $ git branch --merged       # Show all branches merged into the current one
