@@ -86,6 +86,9 @@ set pastetoggle=<F2>
 " Stop highlighting searches
 nmap <leader>n :nohl<CR>
 
+" Open same file in new tab
+nmap <leader>t :tab split<CR>
+
 " Moving lines up and down with Ctrl+up/down
 nmap <C-Up> ddkP
 nmap <C-Down> ddp
