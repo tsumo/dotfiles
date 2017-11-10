@@ -88,6 +88,8 @@ nmap <leader>n :nohl<CR>
 
 " Open same file in new tab
 nmap <leader>t :tab split<CR>
+" Open same file in new tab in last position
+nmap <leader>T :tab split<CR>:tabm<CR>
 
 " Moving lines up and down with Ctrl+up/down
 nmap <C-Up> ddkP
