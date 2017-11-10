@@ -60,6 +60,7 @@ $ git commit -m <comment>   # Commit staged changes with one-line message
 $ git commit -a             # Stage all modified tracked files and commit
 $ git commit --amend        # Squash changes in index into the previous commit,
                             # useful for fixing small errors before pushing
+$ git commit --amend --date=now     # Same as above, also update commit date
 
 $ git checkout <branch>     # Switch to another branch, changing files in working directory
 $ git checkout -b <branch>  # Create new branch and switch to it
