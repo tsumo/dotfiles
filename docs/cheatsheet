@@ -204,19 +204,26 @@ Prefix + space  # Switch layout of panes
 -----------
 ---slimv---
 -----------
+,,      # Open slimv menu
 ,c      # Connect to REPL
 ,s      # Describe symbol
 ,h      # Open symbol page in Hyperspec
 ,1      # Macroexpand-1
+,m      # Macroexpand-All
 ,i      # Inspect
 ,xl     # (On the function) List callers
 ,xe     # (On the function) List callees
+,Q      # Close REPL and stop SWANK server
 
 ,t      # Toggle tracing for current function
 ,T      # Untrace all
 
 ,d      # Eval top-level form
 ,e      # Eval current expr
+,r      # Eval region (visual)
+,b      # Eval buffer
+,u      # Undefine function
+
 ,D      # Compile top-level form
 ,F      # Compile file
 ,L      # Compile and load file
@@ -237,6 +244,7 @@ Prefix + space  # Switch layout of panes
 ,I      # Raise subforms
 ,<      # Move paren left
 ,>      # Move paren right
+,)      # Close form
 
 --------------
 ---rtorrent---

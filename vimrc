@@ -181,6 +181,14 @@ au BufEnter * match ExtraWhitespace /\s\+$/
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhiteSpace /\s\+$/
 
+"=========
+" PLUGINS
+"=========
+if exists("g:slimv_loaded")
+    let g:slimv_repl_split=4
+    let g:lisp_rainbow=1
+endif
+
 "==================================================================
 " MULTIPURPOSE TAB KEY
 " Indent if we're at the beginning of a line. Else, do completion.
