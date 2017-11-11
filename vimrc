@@ -184,10 +184,10 @@ au InsertLeave * match ExtraWhiteSpace /\s\+$/
 "=========
 " PLUGINS
 "=========
-if exists("g:slimv_loaded")
-    let g:slimv_repl_split=4
-    let g:lisp_rainbow=1
-endif
+" Open REPL in vertical right split
+let g:slimv_repl_split=4
+" Rainbow parens
+let g:lisp_rainbow=1
 
 "==================================================================
 " MULTIPURPOSE TAB KEY
