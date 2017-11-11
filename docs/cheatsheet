@@ -201,6 +201,43 @@ Prefix + space  # Switch layout of panes
 3. Start selection with v
 4. Yank selection with y
 
+-----------
+---slimv---
+-----------
+,c      # Connect to REPL
+,s      # Describe symbol
+,h      # Open symbol page in Hyperspec
+,1      # Macroexpand-1
+,i      # Inspect
+,xl     # (On the function) List callers
+,xe     # (On the function) List callees
+
+,t      # Toggle tracing for current function
+,T      # Untrace all
+
+,d      # Eval top-level form
+,e      # Eval current expr
+,D      # Compile top-level form
+,F      # Compile file
+,L      # Compile and load file
+
+,g      # Change package
+
+---In the debugger---
+,a      # Abort
+,q      # Quit
+,n      # Continue
+,i      # (On the backtrace frame) Inspect in frame
+
+---Paredit---
+,w      # (On the opening paren) Wrap in parens
+,S      # Splice - remove outer parens
+,O      # Split
+,J      # Join
+,I      # Raise subforms
+,<      # Move paren left
+,>      # Move paren right
+
 --------------
 ---rtorrent---
 --------------
