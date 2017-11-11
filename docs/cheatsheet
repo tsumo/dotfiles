@@ -246,6 +246,17 @@ Prefix + space  # Switch layout of panes
 ,>      # Move paren right
 ,)      # Close form
 
+----------
+---LISP---
+----------
+eq              # Compare symbols and same cons cells
+eql             # Same, but also numbers of the same type and characters
+equal           # Same, but also lists, strings
+equalp          # Same, but also differently capitalized string and numbers of different types
+=               # Numbers of different types
+string-equal    # Differently capitalized strings
+char-equal      # Characters
+
 --------------
 ---rtorrent---
 --------------
