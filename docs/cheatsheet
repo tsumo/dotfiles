@@ -171,15 +171,15 @@ $ git config --global alias.visual '!gitk'
 ----------
 ---tmux---
 ----------
-$ tmux new-sesion -s 'my project'   # Creating named session
-$ tmux -L moo                       # Create or attach to a session "moo"
-$ tmux -L moo attach                # Attach to a session "moo"
+$ tmux new -s <session>         # Creating named session
+$ tmux attach -t <session>      # Attach to a session
 
 Prefix + $      # Rename current session
 Prefix + (      # Switch to the previous session
 Prefix + )      # Switch to the next session
 Prefix + L      # Switch to the last session
 Prefix + s      # Interactive session switch
+Prefix + d      # Detach session
 
 Prefix + ,      # Rename current window
 Prefix + p      # Swith to the previous window
