@@ -13,9 +13,10 @@ set termguicolors   " For colorschemes
 filetype plugin on
 filetype indent on  " Load file-specific indent files
 
-" Place to store .swp files
+" Dirs to store .swp files and backups
 " Double slash protects from filename conflicts
 set directory=~/.vim/tmp//,/var/tmp//,/tmp//
+set backupdir=~/.vim/tmp//,/var/tmp//,/tmp//
 
 "====
 " UI
@@ -78,6 +79,10 @@ nnoremap <silent> <S-Left> :vertical resize -5<CR>
 "===========
 " SHORTCUTS
 "===========
+" Faster scrolling
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+
 " Toggle auto-indenting for code paste in normal mode
 nnoremap <F2> :set invpaste paste?<CR>
 " and in insert mode
@@ -101,8 +106,8 @@ nmap <C-Down> ddp
 " No arrow keys in insert and visual
 noremap <Up> gk
 noremap <Down> gj
-noremap <Left> <C-y>gk
-noremap <Right> <C-e>gj
+noremap <Left> 3<C-y>3gk
+noremap <Right> 3<C-e>3gj
 inoremap <Up> <NOP>
 inoremap <Down> <NOP>
 inoremap <Left> <NOP>
