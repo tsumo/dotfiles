@@ -116,6 +116,24 @@ $ git push <remote> --tags      # Push all tags to the remote
 $ git checkout <tag>            # View versions of files a tag is pointing to,
                                 # puts repo in "detached HEAD" state
 
+$ git stash                 # Stash dirty working directory (all unstaged and staged for commit changes)
+$ git stash --patch         # Stash hunk by hunk
+$ git stash list            # Show all stashes
+$ git stash apply           # Reapply most recent stash
+$ git stash apply <stash>   # Reapply specific stash from stack
+$ git stash drop <stash>    # Remove stash
+$ git stash pop             # Reapply and drop stash
+$ git stash --keep-index    # Leave staged content in the index
+$ git stash -u              # Include untracked files in the stash
+$ git stash branch <branch> # Create new branch with stashed changes on top of
+                              stash parent commit and drop the stash
+
+$ git clean -f              # Remove untracked files from working directory
+$ git clean -i              # Interactive removing
+$ git clean -d              # Remove untracked directories too
+$ git clean -n              # Do a dry-run, dot actually remove anything
+$ git clean -x              # Remove ignored files too
+
 $ git log                       # Show commits chronologically
 $ git log -<number>             # Show only n latest commits
 $ git log --since=2.weeks       # Time-limiting option - after certain date
