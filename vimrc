@@ -194,6 +194,13 @@ let g:slimv_repl_split=4
 " Rainbow parens
 let g:lisp_rainbow=1
 
+" Open NERDTree
+nmap <leader>ne :NERDTreeToggle<CR>
+" Close vim when NERDTree is the only window
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Open file and folders with l, ranger-style
+let NERDTreeMapActivateNode='l'
+
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
