@@ -146,6 +146,11 @@ $ git log --decorate            # Show ref names for commits
 $ git log --graph               # Show commits as graph
 $ git log --pretty=oneline      # Other formats [short | full | fuller]
 
+$ git grep <search>         # Search working directory
+$ git grep -n <search>      # Print line numbers
+$ git grep -c <search>      # Show summary - number of matches per file
+$ git grep -p <search>      # Show function name in which match occured
+
 # Hash, author date, comment, commit decorations, author name.
 # Shows commits as a graph, with short date format, one commit per line
 $ git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
