@@ -3,6 +3,9 @@
     br = branch
     st = status
 
+[commit]
+    verbose = true
+
 [color]
     ui = true
 

@@ -170,7 +170,7 @@ set statusline+=%=%-19(%3l,%02c%03V%)   " ruler
 " INVISIBLE CHARACTERS
 "======================
 " Toggle invisible characters
-nmap <leader>l :set list!<CR>
+nmap <silent> <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 " Invisible character colors
