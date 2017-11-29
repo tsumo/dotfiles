@@ -70,9 +70,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # My settings
 alias sudo="sudo "
 alias vi="vim"
-alias yogurt="yaourt"
-alias upd="yaourt -Syua"
-alias pgrep="pgrep -a"
+alias :q="exit"
 
 export EDITOR=vim
 
