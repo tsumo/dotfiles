@@ -65,6 +65,8 @@ $ git push <remote> --delete <branch>
 
 
 $ git merge <branch>        # Merge to current branch
+$ git merge --abort         # When you're not quite ready to deal with the conflict yet
+                            # May fail if working directory wasn't clean before merge started
 
 
 $ git rebase <branch>       # Reapplying changes from another branch into the current branch
@@ -129,6 +131,10 @@ $ git log --stat                # Show commits with summary of changes
 $ git log --decorate            # Show ref names for commits
 $ git log --graph               # Show commits as graph
 $ git log --pretty=oneline      # Other formats [short | full | fuller]
+
+
+$ git blame <file>          # Annotate file to show who is responsible for the individual lines in file
+$ git blame -C <file>       # Try to determine if lines were moved in from another file
 
 
 $ git grep <search>         # Search working directory
