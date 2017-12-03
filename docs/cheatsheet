@@ -230,6 +230,9 @@ enca -L ru -c -x UTF-8 *.txt
 LD_PRELOAD=/path/to/my/malloc.so /bin/ls
 LD_LIBRARY_PATH=/path/to/libs ./program
 
+# To run a command with different locale:
+LANG=ru_RU.UTF-8 cal -y 2018
+
 # Check needed libraries
 ldd ./program
 
