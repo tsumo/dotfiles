@@ -1,4 +1,6 @@
-set history=1000    " Lines of command history to remember
+set nocompatible
+
+set history=10000   " Lines of command history to remember
 
 set tabstop=4       " Show tabs as n spaces
 set softtabstop=4   " Number of spaces to insert with TAB or delete with BS
@@ -10,6 +12,7 @@ set smartindent
 
 set termguicolors   " For colorschemes
 
+filetype on
 filetype plugin on
 filetype indent on  " Load file-specific indent files
 
