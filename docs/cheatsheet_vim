@@ -123,6 +123,7 @@ do  : changes under cursor get replaced by the content of the other file
 
 :swapname   : view name of swapfile
 
+:helptags ALL       : generate helptags for plugins (vim 8)
 :help abbreviation  : view help on abbreviations
 :help user-manual   : view user manual
 :helpgrep <str>     : search through help
@@ -141,3 +142,20 @@ do  : changes under cursor get replaced by the content of the other file
 :w [filename]   : write changes to file
 ZZ  : save changes and exit
 :q  : exit vim
+
+=== SURROUND ===
+    Opening bracket includes whitespace
+    Closing bracket wraps only object itself
+    For tags - < keeps tag attributes
+               > removes attributes
+ds"         : delete surrounding "
+dst         : delete surrounding tag
+cs"<p>      : change surrounding " to <p> tag
+ysiw)       : (you) surround inside word with ()
+yss{        : surround current line with {} ignoring whitespace
+yS or ySS   : places surrounded text on a new line
+vwwS(       : enter visual mode, select two words, surround them with ()
+
+    Aliases
+b - )   B - }   r - ]   a - >
+cswb - ysiw)    : slight shortcut
