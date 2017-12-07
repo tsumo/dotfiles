@@ -209,6 +209,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Open file and folders with l, ranger-style
 let NERDTreeMapActivateNode='l'
 
+" Smaller fzf window
+let g:fzf_layout = { 'down': '~20%' }
+
 "==================================================================
 " MULTIPURPOSE TAB KEY
 " Indent if we're at the beginning of a line. Else, do completion.
