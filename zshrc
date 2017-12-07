@@ -69,10 +69,11 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # My settings
 alias sudo="sudo "
-alias vi="vim"
+alias vi="nvim"
+alias vimdiff="nvim -d"
 alias :q="exit"
 
-export EDITOR=vim
+export EDITOR=nvim
 
 #  When searching for history entries in the line editor, do not display duplicates
 #  of a line previously found, even if the duplicates are not contiguous.

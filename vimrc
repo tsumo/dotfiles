@@ -39,10 +39,6 @@ set shortmess+=I    " Don't display intro message
 " Fix slow O inserts
 set timeout timeoutlen=1000 ttimeoutlen=100
 
-" solarized8 colorscheme
-set background=dark
-autocmd VimEnter * colorscheme solarized8
-
 " Absolute line numbers for insert mode and unfocused windows
 " Relative line numbers for normal mode
 set number relativenumber
@@ -209,9 +205,19 @@ Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-grepper'
 call plug#end()
 
+" solarized8 colorscheme
+set background=dark
+" Don't show errors if colorscheme doesn't exist
+try
+    colorscheme solarized8
+catch
+    colorscheme desert
+endtry
+
 " Disable ALE for now
-" TODO Add check if ALE is installed
-autocmd VimEnter * ALEDisable
+if exists('g:loaded_ale')
+    autocmd VimEnter * ALEDisable
+endif
 
 " Open REPL in vertical right split
 let g:slimv_repl_split=4
