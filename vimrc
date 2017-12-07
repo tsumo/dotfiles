@@ -197,6 +197,22 @@ au InsertLeave * match ExtraWhiteSpace /\s\+$/
 "=========
 " PLUGINS
 "=========
+" VimPlug
+call plug#begin('~/.local/share/nvim/plugged')
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'w0rp/ale'
+Plug 'lifepillar/vim-solarized8'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
+Plug 'mhinz/vim-grepper'
+call plug#end()
+
+" Disable ALE for now
+" TODO Add check if ALE is installed
+autocmd VimEnter * ALEDisable
+
 " Open REPL in vertical right split
 let g:slimv_repl_split=4
 " Rainbow parens
