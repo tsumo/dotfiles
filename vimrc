@@ -25,7 +25,6 @@ set backupdir=~/.vim/tmp//,/var/tmp//,/tmp//
 " UI
 "====
 syntax on           " Syntax highlighting
-colorscheme solarized8_dark
 set ruler           " Show cursor position in bottom right corner
 set wrap            " Wrap lines
 set scrolloff=3     " Number of context lines visible above or below cursor
@@ -40,6 +39,10 @@ set shortmess+=I    " Don't display intro message
 " Fix slow O inserts
 set timeout timeoutlen=1000 ttimeoutlen=100
 
+" solarized8 colorscheme
+set background=dark
+autocmd VimEnter * colorscheme solarized8
+
 " Absolute line numbers for insert mode and unfocused windows
 " Relative line numbers for normal mode
 set number relativenumber
@@ -50,11 +53,10 @@ augroup numbertoggle
 augroup END
 
 " Remember last cursor position when opening a file
+" Don't do it for commit messages
 if has("autocmd")
-    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+    au BufReadPost * if &ft != 'gitcommit' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
-
-colorscheme solarized8_dark
 
 "========
 " SPLITS
@@ -85,6 +87,9 @@ nnoremap <silent> <S-Left> :vertical resize -5<CR>
 " Faster scrolling
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
+
+" fzf open file
+nnoremap <C-p> :Files<CR>
 
 " Toggle auto-indenting for code paste in normal mode
 nnoremap <F2> :set invpaste paste?<CR>
@@ -203,14 +208,6 @@ nmap <leader>ne :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Open file and folders with l, ranger-style
 let NERDTreeMapActivateNode='l'
-
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 0
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
 
 "==================================================================
 " MULTIPURPOSE TAB KEY
