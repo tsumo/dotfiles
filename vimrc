@@ -233,6 +233,10 @@ let NERDTreeMapActivateNode='l'
 
 " Smaller fzf window
 let g:fzf_layout = { 'down': '~20%' }
+" Hide fzf buffer statusline
+autocmd! FileType fzf
+autocmd  FileType fzf set laststatus=0 noshowmode noruler
+    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
 "==================================================================
 " MULTIPURPOSE TAB KEY
