@@ -203,6 +203,7 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-grepper'
+Plug 'junegunn/goyo.vim'
 call plug#end()
 
 " solarized8 colorscheme
@@ -215,9 +216,7 @@ catch
 endtry
 
 " Disable ALE for now
-if exists('g:loaded_ale')
-    autocmd VimEnter * ALEDisable
-endif
+autocmd VimEnter * if exists('g:loaded_ale') | ALEDisable | endif
 
 " Open REPL in vertical right split
 let g:slimv_repl_split=4
