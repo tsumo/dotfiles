@@ -10,6 +10,8 @@ set shiftwidth=4    " Indent size for normal mode commands
 set autoindent      " Copy indent from current line to new line
 set smartindent
 
+set clipboard+=unnamedplus
+
 set termguicolors   " For colorschemes
 
 filetype on
