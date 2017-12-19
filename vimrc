@@ -167,10 +167,10 @@ function! StatuslineGit()
 endfunction
 
 set statusline=
-set statusline+=%{StatuslineGit()}  " git branch
-set statusline+=\ %<%f\ (%{&ft})      " filename, filetype
-set statusline+=\ %-4(%m%)          " modified flag
-set statusline+=%=%-19(%3l,%02c%03V%)   " ruler
+set statusline+=%{StatuslineGit()}      " git branch
+set statusline+=\ %<%f\ (%{&ft})        " filename, filetype
+set statusline+=\ %-4(%m%)              " modified flag
+set statusline+=%=%-19(%3l,%02c%03V%)%P " ruler
 
 "======================
 " INVISIBLE CHARACTERS
