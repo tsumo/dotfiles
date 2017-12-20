@@ -38,6 +38,7 @@ set wildmenu        " Visual autocomplete for commands
 set wildmode=longest:full,full
 set lazyredraw      " Redraw only when we need to
 set shortmess+=I    " Don't display intro message
+set mouse=a         " Enables mouse interaction in all modes
 " Fix slow O inserts
 set timeout timeoutlen=1000 ttimeoutlen=100
 
@@ -205,7 +206,6 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-grepper'
-Plug 'junegunn/goyo.vim'
 call plug#end()
 
 " solarized8 colorscheme
