@@ -103,9 +103,9 @@ nmap <leader>t :tab split<CR>
 " Open same file in new tab in last position
 nmap <leader>T :tab split<CR>:tabm<CR>
 
-" Moving lines up and down with Ctrl+up/down
-nmap <C-Up> ddkP
-nmap <C-Down> ddp
+" Moving line up and down with Ctrl+up/down, autoindent both swapped lines
+nmap <C-Up> ddkP==j==k==
+nmap <C-Down> ddp==k==j==
 
 " Up and Down navigate inside long lines
 " Left and Right scroll window, keeping cursor
@@ -203,9 +203,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 Plug 'lifepillar/vim-solarized8'
+Plug 'ajh17/Spacegray.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-grepper'
+Plug 'pangloss/vim-javascript'
 call plug#end()
 
 " solarized8 colorscheme
