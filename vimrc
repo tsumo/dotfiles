@@ -208,6 +208,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-grepper'
 Plug 'pangloss/vim-javascript'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 " solarized8 colorscheme
