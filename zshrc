@@ -79,3 +79,6 @@ export EDITOR=nvim
 #  of a line previously found, even if the duplicates are not contiguous.
 setopt HIST_FIND_NO_DUPS
 
+# Local config
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
