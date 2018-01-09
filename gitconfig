@@ -2,7 +2,7 @@
     co = checkout
     br = branch
     st = status
-    lg = log --graph --oneline --all --decorate --full-history
+    lg = log --graph --oneline --all --decorate --full-history --color=always
 
 [commit]
     verbose = true
