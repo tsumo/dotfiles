@@ -1,0 +1,18 @@
+$ npm init      # Create a package from current directory
+                # Asks questions and writes a package.json file
+$ npm init --scope=<name>   # Create scoped package
+$ npm whoami                # See who you're logged in as
+$ npm adduser               # Create account
+$ npm install <pkg>         # Install a package in current directory
+$ npm install -g <pkg>      # Install a package globally
+$ npm ls                    # Show packages installed in current directory
+$ npm publish               # Upload a package in current directory
+$ npm view <pkg>            # View package info
+$ npm dist-tag add <pkg>@<version> [tag]    # Add a tag to a package version
+$ npm install <pkg>@<tag>   # Install version of package referenced by tag
+$ npm dist-tag rm <pkg> <tag>   # Remove a tag
+$ npm outdated              # Show which installed packages have updates
+$ npm update                # Update locally installed packages
+$ npm uninstall <pkg>       # Remove locally installed package
+$ npm uninstall --save <pkg>    # Remove locally installed package
+                                # and update dependencies in package.json
