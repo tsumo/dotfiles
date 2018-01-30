@@ -234,6 +234,8 @@ nmap <leader>ne :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Open file and folders with l, ranger-style
 let NERDTreeMapActivateNode='l'
+" Show hidden files (toggled with I)
+let NERDTreeShowHidden=1
 
 " Smaller fzf window
 let g:fzf_layout = { 'down': '~20%' }

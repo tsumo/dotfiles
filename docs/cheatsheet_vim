@@ -110,6 +110,7 @@ N       : jump to the previous occurence of the string
 /\d     : search for a digit
 /\d\+   : search for one or more digits
 /\d\*   : search for zero or more digits
+/[^\x00-\x7F]   : search for all non-ascii characters
 
 zc  : fold a section
 zo  : open the fold
