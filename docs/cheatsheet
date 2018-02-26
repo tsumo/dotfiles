@@ -33,39 +33,6 @@ $ whoneeds FOO      # List packages depending on a FOO
 # Like "pacman -Sy FOO" or "pacman -Sy; pacman -S FOO"
 # This can lead to dependency issues
 
-----------
----tmux---
-----------
-$ tmux new -s <session>         # Creating named session
-$ tmux attach -t <session>      # Attach to a session
-
-Prefix + $      # Rename current session
-Prefix + (      # Switch to the previous session
-Prefix + )      # Switch to the next session
-Prefix + L      # Switch to the last session
-Prefix + s      # Interactive session switch
-Prefix + d      # Detach session
-
-Prefix + ,      # Rename current window
-Prefix + p      # Swith to the previous window
-Prefix + n      # Swith to the next window
-Prefix + l      # Switch to the last window
-Prefix + w      # Interactive windows switch
-Prefix + 1      # Switch to the first window
-Prefix + 2      # Switch to the second window and so on...
-Prefix + '      # Switch to the window with index greater than 9
-Prefix + f      # Switch to the windows by name
-Prefix + c      # Create new window at the first open index
-Prefix + .      # Prompt for an index to move current window to
-
-Prefix + space  # Switch layout of panes
-
-1. To copy text between tmux panes press
-   Prefix + [
-2. Navigate to start of the selection with hjkl
-3. Start selection with v
-4. Yank selection with y
-
 -----------
 ---slimv---
 -----------

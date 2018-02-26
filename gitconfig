@@ -3,8 +3,9 @@
     br = branch
     st = status
     df = diff
+    ds = diff --staged
     lg = log --graph --oneline --all --decorate --full-history --color=always
-    ci = commit
+    ci = commit --verbose
 
 [commit]
     verbose = true
