@@ -19,8 +19,19 @@ Prefix + '      # Switch to the window with index greater than 9
 Prefix + f      # Switch to the windows by name
 Prefix + c      # Create new window at the first open index
 Prefix + .      # Prompt for an index to move current window to
+Prefix + &      # Prompt to kill current window
 
-Prefix + space  # Switch layout of panes
+Prefix + %      # Split window vertically
+Prefix + "      # Split window horizontally
+Prefix + ;      # Switch to the last pane
+Prefix + o      # Switch to the next pane
+Prefix + z      # Zoom / unzoom pane
+Prefix + q      # Show pane numbers
+Prefix + {      # Move pane to the left
+Prefix + }      # Move pane to the right
+Prefix + space  # Cycle layouts
+
+Prefix + t      # Fullscreen clock
 
 --------------------------
 ---Custom configuration---
@@ -38,5 +49,4 @@ To copy text between tmux panes
 2. Navigate to start of the selection with hjkl
 3. Start selection with v
 4. Yank selection with y
-5. q to exit copy mode
 
