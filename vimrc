@@ -111,6 +111,9 @@ nnoremap <leader>* :Grepper -tool ag -cword -noprompt<cr>
 " Start search with ag
 nnoremap <leader>g :Grepper -tool ag<cr>
 
+" pdv document
+autocmd FileType php nnoremap <leader>d :call pdv#DocumentCurrentLine()<CR>
+
 " Toggle auto-indenting for code paste in normal mode
 nnoremap <F2> :set invpaste paste?<CR>
 " and in insert mode
@@ -214,6 +217,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'mhinz/vim-grepper'
 Plug 'pangloss/vim-javascript'
 Plug 'jiangmiao/auto-pairs'
+Plug 'tobyS/vmustache'
+Plug 'tobyS/pdv'
 call plug#end()
 
 " Don't show errors if colorscheme doesn't exist
@@ -250,6 +255,9 @@ let g:fzf_layout = { 'down': '~20%' }
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
     \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+
+" pdv templates
+let g:pdv_template_dir = $HOME . "/.local/share/nvim/plugged/pdv/templates"
 
 "==================================================================
 " MULTIPURPOSE TAB KEY
