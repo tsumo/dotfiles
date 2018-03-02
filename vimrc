@@ -60,6 +60,13 @@ augroup numbertoggle
     autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 
+" Draw crosshair on the cursor position in the current window
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline cursorcolumn
+  au WinLeave * setlocal nocursorline nocursorcolumn
+augroup END
+
 " Remember last cursor position when opening a file
 " Don't do it for commit messages
 if has("autocmd")
@@ -209,11 +216,10 @@ Plug 'pangloss/vim-javascript'
 Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
-" solarized8 colorscheme
-set background=dark
 " Don't show errors if colorscheme doesn't exist
 try
-    colorscheme solarized8
+    colorscheme spacegray
+    let g:spacegray_use_italics = 1
 catch
     colorscheme desert
 endtry
