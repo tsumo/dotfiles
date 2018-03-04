@@ -219,6 +219,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tobyS/vmustache'
 Plug 'tobyS/pdv'
+Plug 'kovisoft/slimv'
 call plug#end()
 
 " Don't show errors if colorscheme doesn't exist
@@ -239,6 +240,10 @@ let g:deoplete#enable_at_startup = 1
 let g:slimv_repl_split=4
 " Rainbow parens
 let g:lisp_rainbow=1
+
+" Skips autopairs init for lisp files
+" since slimv already contains paredit
+au FileType lisp let b:autopairs_loaded=1
 
 " Open NERDTree
 nmap <leader>ne :NERDTreeToggle<CR>

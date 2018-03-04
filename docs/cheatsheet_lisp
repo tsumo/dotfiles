@@ -1,0 +1,52 @@
+---slimv---
+,,      # Open slimv menu
+,c      # Connect to REPL
+,s      # Describe symbol
+,h      # Open symbol page in Hyperspec
+,1      # Macroexpand-1
+,m      # Macroexpand-All
+,i      # Inspect
+,xl     # (On the function) List callers
+,xe     # (On the function) List callees
+,Q      # Close REPL and stop SWANK server
+
+,t      # Toggle tracing for current function
+,T      # Untrace all
+
+,d      # Eval top-level form
+,e      # Eval current expr
+,r      # Eval region (visual)
+,b      # Eval buffer
+,u      # Undefine function
+
+,D      # Compile top-level form
+,F      # Compile file
+,L      # Compile and load file
+
+,g      # Change package
+
+---In the debugger---
+,a      # Abort
+,q      # Quit
+,n      # Continue
+,i      # (On the backtrace frame) Inspect in frame
+
+---Paredit---
+,w      # (On the opening paren) Wrap in parens
+,S      # Splice - remove outer parens
+,O      # Split
+,J      # Join
+,I      # Raise subforms
+,<      # Move paren left
+,>      # Move paren right
+,)      # Close form
+
+---Equality---
+eq              # Compare symbols and same cons cells
+eql             # Same, but also numbers of the same type and characters
+equal           # Same, but also lists, strings
+equalp          # Same, but also differently capitalized string and numbers of different types
+=               # Numbers of different types
+string-equal    # Differently capitalized strings
+char-equal      # Characters
+
