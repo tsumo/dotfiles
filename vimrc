@@ -123,7 +123,7 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F3>
 
 " Stop highlighting searches
-nmap <leader>n :nohl<CR>
+nmap <leader>h :nohl<CR>
 
 " Open same file in new tab
 nmap <leader>t :tab split<CR>
