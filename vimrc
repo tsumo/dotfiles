@@ -18,6 +18,9 @@ filetype on
 filetype plugin on
 filetype indent on  " Load file-specific indent files
 
+" Makes plugins more snappy
+set updatetime=750
+
 " Dirs to store .swp files and backups
 " Double slash protects from filename conflicts
 set directory=~/.vim/tmp//,/var/tmp//,/tmp//
@@ -220,6 +223,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tobyS/vmustache'
 Plug 'tobyS/pdv'
 Plug 'kovisoft/slimv'
+Plug 'majutsushi/tagbar'
 call plug#end()
 
 " Don't show errors if colorscheme doesn't exist
@@ -246,13 +250,16 @@ let g:lisp_rainbow=1
 au FileType lisp let b:autopairs_loaded=1
 
 " Open NERDTree
-nmap <leader>ne :NERDTreeToggle<CR>
+nmap <leader>nt :NERDTreeToggle<CR>
 " Close vim when NERDTree is the only window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Open file and folders with l, ranger-style
 let NERDTreeMapActivateNode='l'
 " Show hidden files (toggled with I)
 let NERDTreeShowHidden=1
+
+" Open Tagbar
+nmap <leader>tb :TagbarToggle<CR>
 
 " Smaller fzf window
 let g:fzf_layout = { 'down': '~20%' }
