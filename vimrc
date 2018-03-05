@@ -236,6 +236,8 @@ endtry
 
 " Disable ALE for now
 autocmd VimEnter * if exists('g:loaded_ale') | ALEDisable | endif
+" Toggle ALE
+nmap <leader>al :ALEToggle<CR>
 
 " Enable deoplete
 let g:deoplete#enable_at_startup = 1
