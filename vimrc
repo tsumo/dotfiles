@@ -278,17 +278,16 @@ let g:pdv_template_dir = $HOME . "/.local/share/nvim/plugged/pdv/templates"
 " Indent if we're at the beginning of a line. Else, do completion.
 " by garybernhardt
 "==================================================================
-
 function! InsertTabWrapper()
     let col = col('.') - 1
     if !col || getline('.')[col - 1] !~ '\k'
         return "\<tab>"
     else
-        return "\<c-p>"
+        return "\<c-n>"
     endif
 endfunction
 inoremap <expr> <tab> InsertTabWrapper()
-inoremap <s-tab> <c-n>
+inoremap <s-tab> <c-p>
 
 "=====================
 " Local configuration
