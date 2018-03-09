@@ -41,6 +41,7 @@ syntax on           " Syntax highlighting
 set ruler           " Show cursor position in bottom right corner
 set wrap            " Wrap lines
 set scrolloff=3     " Number of context lines visible above or below cursor
+set sidescrolloff=3 " Number of context rows visible to the left of right of the cursor
 set showcmd         " Show command in bottom bar
 set showtabline=2   " Always show tab bar at the top
 set laststatus=2    " Always show status line at the bottom
@@ -102,6 +103,11 @@ nnoremap <silent> <S-Left> :vertical resize -5<CR>
 "===========
 " SHORTCUTS
 "===========
+" Disable Ex mode
+nmap Q <silent>
+" Disable command history window
+nmap q: <silent>
+
 " Faster scrolling
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
@@ -112,10 +118,13 @@ nnoremap <C-p> :Files<CR>
 " Grepper - search word under cursor
 nnoremap <leader>* :Grepper -tool ag -cword -noprompt<cr>
 " Start search with ag
-nnoremap <leader>g :Grepper -tool ag<cr>
+nnoremap <leader>/ :Grepper -tool ag<cr>
 
 " pdv document
 autocmd FileType php nnoremap <leader>d :call pdv#DocumentCurrentLine()<CR>
+
+" Toggle gitgutter
+nnoremap <leader>g :GitGutterToggle<CR>
 
 " Toggle auto-indenting for code paste in normal mode
 nnoremap <F2> :set invpaste paste?<CR>
@@ -175,6 +184,11 @@ set smartcase
 " Makes completion case-sensitive again
 set infercase
 
+"===================
+" SPELLING MISTAKES
+"===================
+abbr feild field
+
 "============
 " STATUSLINE
 "============
@@ -211,6 +225,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 Plug 'w0rp/ale'
 Plug 'lifepillar/vim-solarized8'
 Plug 'ajh17/Spacegray.vim'
@@ -224,6 +239,8 @@ Plug 'tobyS/vmustache'
 Plug 'tobyS/pdv'
 Plug 'kovisoft/slimv'
 Plug 'majutsushi/tagbar'
+Plug 'docunext/closetag.vim'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " Don't show errors if colorscheme doesn't exist
@@ -272,6 +289,14 @@ autocmd  FileType fzf set laststatus=0 noshowmode noruler
 
 " pdv templates
 let g:pdv_template_dir = $HOME . "/.local/share/nvim/plugged/pdv/templates"
+
+" Stop gitgutter from injecting shortcuts
+let g:gitgutter_map_keys = 0
+" gitgutter colors
+highlight link GitGutterAdd String
+highlight link GitGutterChange Type
+highlight link GitGutterDelete Function
+highlight link GitGutterChangeDelete Function
 
 "==================================================================
 " MULTIPURPOSE TAB KEY
