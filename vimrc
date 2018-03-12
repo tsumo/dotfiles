@@ -103,6 +103,10 @@ nnoremap <silent> <S-Left> :vertical resize -5<CR>
 "===========
 " SHORTCUTS
 "===========
+" Space inserts default leader
+" Useful because if shows leader symbol in command line
+map <Space> <Leader>
+
 " Disable Ex mode
 nmap Q <silent>
 " Disable command history window
@@ -225,6 +229,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'w0rp/ale'
 Plug 'lifepillar/vim-solarized8'
