@@ -226,35 +226,31 @@ au InsertLeave * match ExtraWhiteSpace /\s\+$/
 "=========
 " VimPlug
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'w0rp/ale'
-Plug 'lifepillar/vim-solarized8'
-Plug 'ajh17/Spacegray.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'mhinz/vim-grepper'
-Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'jiangmiao/auto-pairs'
-Plug 'tobyS/vmustache'
-Plug 'tobyS/pdv'
-Plug 'kovisoft/slimv'
-Plug 'majutsushi/tagbar'
+Plug 'kovisoft/slimv', { 'for': 'lisp' }
 Plug 'docunext/closetag.vim'
+" Git
+Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+" PHP
+Plug 'tobyS/vmustache'
+Plug 'tobyS/pdv', { 'for': 'php' }
+" Colorschemes
+Plug 'lifepillar/vim-solarized8'
+Plug 'ajh17/Spacegray.vim'
+Plug 'morhetz/gruvbox'
 call plug#end()
-
-" Don't show errors if colorscheme doesn't exist
-try
-    colorscheme spacegray
-    let g:spacegray_use_italics = 1
-catch
-    colorscheme desert
-endtry
 
 " Disable ALE for now
 autocmd VimEnter * if exists('g:loaded_ale') | ALEDisable | endif
@@ -272,6 +268,9 @@ let g:lisp_rainbow=1
 " Skips autopairs init for lisp files
 " since slimv already contains paredit
 au FileType lisp let b:autopairs_loaded=1
+
+" Custom comment style
+autocmd FileType php setlocal commentstring=//\ %s
 
 " Open NERDTree
 nmap <leader>nt :NERDTreeToggle<CR>
@@ -318,6 +317,22 @@ function! InsertTabWrapper()
 endfunction
 inoremap <expr> <tab> InsertTabWrapper()
 inoremap <s-tab> <c-p>
+
+"=============
+" Colorscheme
+"=============
+try
+    set background=dark
+    let g:gruvbox_bold=1
+    let g:gruvbox_italic=1
+    let g:gruvbox_underline=1
+    let g:gruvbox_undercurl=1
+    let g:gruvbox_italicize_comments=1
+    let g:gruvbox_invert_selection=0
+    colorscheme gruvbox
+catch
+    colorscheme desert
+endtry
 
 "=====================
 " Local configuration
