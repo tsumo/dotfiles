@@ -29,13 +29,35 @@ Prefix + z      # Zoom / unzoom pane
 Prefix + q      # Show pane numbers
 Prefix + {      # Move pane to the left
 Prefix + }      # Move pane to the right
-Prefix + space  # Cycle layouts
+Prefix + !      # Break the current pane out of the window
 
+Prefix + M-arrows   # Resize pane
+Prefix + C-arrows   # Resize pane by 5 lines
+
+Prefix + :      # tmux command prompt
+Prefix + space  # Cycle layouts
 Prefix + t      # Fullscreen clock
+Prefix + ~      # Show tmux messages
+Prefix + f      # Search for text in open windows
+Prefix + ?      # List keybindings
+Prefix + i      # Window information
+
+---------------------------
+---Window status symbols---
+---------------------------
+*   Current window
+-   Previously selected window
+#   Activity detected
+!   Bell detected
+~   Window is silent for monitor-silence interval
+M   Window contains marked pane
+Z   Window's active pane is zoomed
 
 --------------------------
 ---Custom configuration---
 --------------------------
+
+Prefix + Prefix # Switch to last window
 
 Prefix + r      # Reload config file
 
@@ -46,7 +68,7 @@ Prefix + >      # Move window to the right
 
 To copy text between tmux panes
 1. Prefix + [
-2. Navigate to start of the selection with hjkl
+3. Navigate to start of the selection with hjkl
 3. Start selection with v
 4. Yank selection with y
 
