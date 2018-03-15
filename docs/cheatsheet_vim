@@ -47,16 +47,27 @@ gg=G    : reindent whole document
 guu     : lowercase line
 gUU     : uppercase line
 
-p       : paste
+y       : yank
+yy      : yank whole line
+yap     : yank whole paragraph
+"ay     : yank to register a
+x       : cut current character
+dw      : cut word
+diw     : cut inner word
+dd      : cut whole line
+p       : paste after cursor
+P       : paste before cursor
+"ap     : paste from register a
+"0p     : paste from a special automatic yank-only register
 :reg    : display all registers
-"1p     : paste from register 1
+
+xp  : swap two characters
 
 :r!date     : execute external command and paste result
 
-ma  : create a mark named 'a'
-'a  : move to the mark named 'a'
-
-ctrl + o    : jump back to previous location
+ma  : create a mark 'a'
+'a  : move to the mark 'a'
+`a  : move to the exact location of mark 'a'
 
 H   : jump as high as possible (to the first line of the window)
 M   : jump to the middle line of the window
@@ -76,25 +87,15 @@ C       : change the rest of the line
 
 v       : enter visual mode
 V       : enter line-based visual mode
+C-v     : enter block-based visual mode
 c       : delete selected and enter insert mode
 ip      : select inner paragraph
 ap      : select by paragraph in visual mode
 aw      : select by words in visual mode
 a"      : select by quoted string in visual mode
-ab      : select by block in visual mode
 !sort       : sort selected using external program
 !grep word  : keep only lines containing word
-<C-v><C-i>  : select block of text, insert in selected block
 <C-v><S-i>  : select a column and insert in each line
-
-x   : delete character in current cursor position
-dw  : delete word
-dd  : delete current line
-yy  : yank current line
-yap : yank current paragraph
-p   : paste copied text after current cursor position
-P   : paste copied text before current cursor position
-xp  : swap two characters
 
 u           : undo changes
 ctrl + r    : redo changes
@@ -112,9 +113,10 @@ N       : jump to the previous occurence of the string
 /\d\*   : search for zero or more digits
 /[^\x00-\x7F]   : search for all non-ascii characters
 
-zc  : fold a section
-zo  : open the fold
-za  : open/close fold
+zc          : fold a section (needs foldmethod)
+zf          : fold a selection
+h / l / zo  : open the fold
+za          : open/close fold
 
 vimdiff file1 file2 : compare files
 dp  : put changes under cursor to the other file
@@ -125,7 +127,7 @@ do  : changes under cursor get replaced by the content of the other file
 :swapname   : view name of swapfile
 
 :helptags ALL       : generate helptags for plugins (vim 8)
-:help abbreviation  : view help on abbreviations
+:help <TERM>        : view help on anything
 :help user-manual   : view user manual
 :helpgrep <str>     : search through help
 :cnext      : jump to the next occurence of the word
@@ -160,3 +162,4 @@ vwwS(       : enter visual mode, select two words, surround them with ()
     Aliases
 b - )   B - }   r - ]   a - >
 cswb - ysiw)    : slight shortcut
+

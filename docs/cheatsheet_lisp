@@ -50,3 +50,48 @@ equalp          # Same, but also differently capitalized string and numbers of d
 string-equal    # Differently capitalized strings
 char-equal      # Characters
 
+---Format---
+~s          # Any object with appropriate delimiters
+~a          # Human-readable
+~$          # Floating point monetary value
+
+~10a        # Right padding, includng string
+~10@a       # Left padding, includng string
+~10,3a      # Padding in multiples, includng string
+~,,4a       # Padding, not including string
+~,,4,'!a    # Specifies character to be used for padding
+
+~x          # Number in hexadecimal
+~b          # Number in binary
+~d          # Number in decimal
+~:d         # Number with commas as digit group separators
+~10d        # Number with left padding, including number
+~10,'xd     # Specifies character to be used for padding
+
+~f          # Floating point value
+~4f         # Round value to specified width, including decimal point
+~,4f        # Specifies number of digits after decimal point
+~,,2f       # Scale by specified factors of ten (0.77 -> 77.0)
+
+~%          # Start a new line
+~&          # Start a new line if needed
+~4%         # Specifies number of new lines
+
+~5t~a ~15~a ~25~a   # Print at the specified column
+    kangaroo  tiger     walrus
+    dog       hippo     parrot
+
+~30<~a~;~a~;~a~>    # Print equally spaced with the specified width
+kangaroo      tiger     walrus
+dog        hippo        parrot
+
+~10:@<~a~>~10:@<~a~>    # Print equally spaced and centered
+ kangaroo    walrus
+   hippo       dog
+   tiger     parrot
+
+~{A ~a! ~}              # Iterate through a list
+A dog! A parrot! A hippo!
+~{A ~a... or a ~a?~}    # Can grab more than one item in iteration
+A dog... or a hippo?
+
