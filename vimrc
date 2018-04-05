@@ -192,6 +192,7 @@ set infercase
 " SPELLING MISTAKES
 "===================
 abbr feild field
+abbr docuemnt document
 
 "============
 " STATUSLINE
