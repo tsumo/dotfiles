@@ -172,7 +172,16 @@ vnoremap <Down> <NOP>
 vnoremap <Left> <NOP>
 vnoremap <Right> <NOP>
 
-" mapping cyrillic layout for normal mode
+" Repeat last command in the last tmux pane.
+nnoremap <Leader>r :call <SID>TmuxRepeat()<CR>
+
+function! s:TmuxRepeat()
+    silent! write
+    silent! exec "!tmux select-pane -l && tmux send up enter && tmux select-pane -l"
+    redraw!
+endfunction
+
+" Mapping cyrillic layout for normal mode
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
 "========
