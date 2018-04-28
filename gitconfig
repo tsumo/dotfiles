@@ -34,9 +34,9 @@
 
 [difftool "nvimdiff"]
     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
-    # Abort all diffs with :cq
-    trustExitCode = true
 
 [difftool]
     prompt = false
+    # Abort all diffs with :cq
+    trustExitCode = true
 
