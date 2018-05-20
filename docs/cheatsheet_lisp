@@ -95,3 +95,9 @@ A dog! A parrot! A hippo!
 ~{A ~a... or a ~a?~}    # Can grab more than one item in iteration
 A dog... or a hippo?
 
+---Comments---
+;;;; File header comment
+;;; Paragraph for section of code
+;; In-function commentary, indented with the rest of code
+; Comment at the same line with code
+
