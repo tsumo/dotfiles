@@ -256,6 +256,8 @@ Plug 'airblade/vim-gitgutter'
 " PHP
 Plug 'tobyS/vmustache'
 Plug 'tobyS/pdv', { 'for': 'php' }
+" Solidity
+Plug 'tomlion/vim-solidity'
 " Colorschemes
 Plug 'lifepillar/vim-solarized8'
 Plug 'ajh17/Spacegray.vim'
