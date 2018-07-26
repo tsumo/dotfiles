@@ -202,6 +202,7 @@ set infercase
 "===================
 abbr feild field
 abbr docuemnt document
+abbr arrya array
 
 "============
 " STATUSLINE
@@ -250,6 +251,7 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'kovisoft/slimv', { 'for': 'lisp' }
 Plug 'docunext/closetag.vim'
+Plug 'vimwiki/vimwiki'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
