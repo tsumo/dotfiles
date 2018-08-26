@@ -272,6 +272,10 @@ autocmd VimEnter * if exists('g:loaded_ale') | ALEDisable | endif
 " Toggle ALE
 nmap <leader>al :ALEToggle<CR>
 
+" Grepper - search in hidden files
+runtime plugin/grepper.vim
+let g:grepper.ag.grepprg .= ' --hidden'
+
 " Enable deoplete
 let g:deoplete#enable_at_startup = 1
 
