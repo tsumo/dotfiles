@@ -203,6 +203,7 @@ set infercase
 abbr feild field
 abbr docuemnt document
 abbr arrya array
+abbr flase false
 
 "============
 " STATUSLINE
