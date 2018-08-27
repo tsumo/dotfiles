@@ -274,7 +274,7 @@ nmap <leader>al :ALEToggle<CR>
 
 " Grepper - search in hidden files
 runtime plugin/grepper.vim
-let g:grepper.ag.grepprg .= ' --hidden'
+let g:grepper.ag.grepprg .= ' --hidden --ignore .git'
 
 " Enable deoplete
 let g:deoplete#enable_at_startup = 1
