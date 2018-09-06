@@ -116,8 +116,10 @@ nmap q: <silent>
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
-" fzf - open file
-nnoremap <C-p> :Files<CR>
+" fzf - open files tracked by git
+nnoremap <C-p> :GFiles<CR>
+" Open files
+nnoremap <M-p> :Files<CR>
 
 " Grepper - search word under cursor
 nnoremap <leader>* :Grepper -tool ag -cword -noprompt<cr>
@@ -287,6 +289,8 @@ let g:lisp_rainbow=1
 " Skips autopairs init for lisp files
 " since slimv already contains paredit
 au FileType lisp let b:autopairs_loaded=1
+" Disable toggle shortcut
+let g:AutoPairsShortcutToggle = ''
 
 " Custom comment style
 autocmd FileType php setlocal commentstring=//\ %s
