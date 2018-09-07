@@ -57,11 +57,12 @@ set timeout timeoutlen=1000 ttimeoutlen=100
 
 " Absolute line numbers for insert mode and unfocused windows
 " Relative line numbers for normal mode
+" Do not enable line numbers inside NERDTree
 set number relativenumber
 augroup numbertoggle
     autocmd!
-    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+    autocmd BufEnter,FocusGained,InsertLeave * if !exists("b:NERDTree") | set relativenumber | endif
+    autocmd BufLeave,FocusLost,InsertEnter   * if !exists("b:NERDTree") | set norelativenumber | endif
 augroup END
 
 " Draw crosshair on the cursor position in the current window
