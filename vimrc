@@ -251,14 +251,19 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'mhinz/vim-grepper'
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'pangloss/vim-javascript'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kovisoft/slimv', { 'for': 'lisp' }
 Plug 'docunext/closetag.vim'
 Plug 'vimwiki/vimwiki'
+Plug 'vim-vdebug/vdebug'
+Plug 'mattn/emmet-vim'
+Plug 'chrisbra/Colorizer'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+" Clojure
+Plug 'tpope/vim-fireplace'
 " PHP
 Plug 'tobyS/vmustache'
 Plug 'tobyS/pdv', { 'for': 'php' }
@@ -325,6 +330,12 @@ highlight link GitGutterAdd String
 highlight link GitGutterChange Type
 highlight link GitGutterDelete Function
 highlight link GitGutterChangeDelete Function
+
+" Css colors
+let g:colorizer_auto_filetype='css,html'
+
+" Use markdown in vimwiki
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 
 "==================================================================
 " MULTIPURPOSE TAB KEY
