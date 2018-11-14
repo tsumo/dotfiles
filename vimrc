@@ -336,6 +336,8 @@ let g:colorizer_auto_filetype='css,html'
 
 " Use markdown in vimwiki
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+" Turn off creation of temporary wikis for all .md files
+let g:vimwiki_global_ext = 0
 
 "==================================================================
 " MULTIPURPOSE TAB KEY
