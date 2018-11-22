@@ -339,6 +339,13 @@ let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}
 " Turn off creation of temporary wikis for all .md files
 let g:vimwiki_global_ext = 0
 
+" javascript plugin keeps adding $ to the keyword list in php files
+augroup phpjsfix
+    autocmd!
+    autocmd FileType javascript setlocal iskeyword+=$
+    autocmd FileType php setlocal iskeyword-=$
+augroup END
+
 "==================================================================
 " MULTIPURPOSE TAB KEY
 " Indent if we're at the beginning of a line. Else, do completion.
