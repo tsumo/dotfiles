@@ -256,7 +256,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'kovisoft/slimv', { 'for': 'lisp' }
 Plug 'docunext/closetag.vim'
 Plug 'vimwiki/vimwiki'
-Plug 'vim-vdebug/vdebug'
+Plug 'vim-vdebug/vdebug', { 'on': 'VdebugStart' }
 Plug 'mattn/emmet-vim'
 Plug 'chrisbra/Colorizer'
 " Git
