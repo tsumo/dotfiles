@@ -257,7 +257,7 @@ Plug 'kovisoft/slimv', { 'for': 'lisp' }
 Plug 'docunext/closetag.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'vim-vdebug/vdebug', { 'on': 'VdebugStart' }
-Plug 'mattn/emmet-vim'
+" Plug 'mattn/emmet-vim'
 Plug 'chrisbra/Colorizer'
 " Git
 Plug 'tpope/vim-fugitive'
@@ -268,7 +268,7 @@ Plug 'tpope/vim-fireplace'
 Plug 'tobyS/vmustache'
 Plug 'tobyS/pdv', { 'for': 'php' }
 " Solidity
-Plug 'tomlion/vim-solidity'
+" Plug 'tomlion/vim-solidity'
 " Colorschemes
 Plug 'lifepillar/vim-solarized8'
 Plug 'ajh17/Spacegray.vim'
