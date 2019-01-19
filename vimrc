@@ -289,6 +289,8 @@ let g:deoplete#enable_at_startup = 1
 
 " Open REPL in vertical right split
 let g:slimv_repl_split=4
+" Speeding up the SWANK server
+let g:swank_block_size=65536
 " Rainbow parens
 let g:lisp_rainbow=1
 
