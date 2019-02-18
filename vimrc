@@ -264,6 +264,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 " Clojure
 Plug 'tpope/vim-fireplace'
+Plug 'vim-scripts/paredit.vim', { 'for': 'clojure' }
 " PHP
 Plug 'tobyS/vmustache'
 Plug 'tobyS/pdv', { 'for': 'php' }
@@ -294,11 +295,25 @@ let g:swank_block_size=65536
 " Rainbow parens
 let g:lisp_rainbow=1
 
+" Run clojure tests from any buffer with cpt
+function! RunBufferTests()
+    let ns = fireplace#ns()
+    if ns !~ '-test$'
+        let ns = ns . "-test"
+    endif
+    silent :Require
+    exe "RunTests " . ns
+endfunction
+autocmd FileType clojure nmap <buffer> cpt :call RunBufferTests()<cr>
+
 " Skips autopairs init for lisp files
-" since slimv already contains paredit
-au FileType lisp let b:autopairs_loaded=1
+" since paredit already does that
+au FileType lisp,clojure let b:autopairs_loaded=1
 " Disable toggle shortcut
 let g:AutoPairsShortcutToggle = ''
+
+" Eval outermost form for clojure
+autocmd FileType clojure nmap <buffer> cpP :Eval<cr>
 
 " Custom comment style
 autocmd FileType php setlocal commentstring=//\ %s
