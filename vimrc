@@ -303,6 +303,8 @@ let g:lisp_rainbow=1
 
 " Run clojure tests from any buffer with cpt
 function! RunBufferTests()
+    " save current file
+    silent! write
     let ns = fireplace#ns()
     if ns !~ '-test$'
         let ns = ns . "-test"
