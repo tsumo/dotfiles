@@ -34,6 +34,10 @@ endif
 let &undodir=s:undoDir
 set undofile
 
+" Indent 'case' and 'default' statements according to the PHP style guide
+" Commented due to https://github.com/2072/PHP-Indenting-for-VIm/issues/58
+" let g:PHP_vintage_case_default_indent = 1
+
 "====
 " UI
 "====
@@ -211,6 +215,7 @@ abbr flase false
 "============
 " STATUSLINE
 "============
+" TODO: add read-only marker
 set statusline=
 set statusline+=\ %<%f\ (%{&ft})        " filename, filetype
 set statusline+=\ %-4(%m%)              " modified flag
@@ -261,6 +266,7 @@ Plug 'vim-vdebug/vdebug', { 'on': 'VdebugStart' }
 Plug 'chrisbra/Colorizer'
 " Git
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 " Clojure
 Plug 'tpope/vim-fireplace'
@@ -314,6 +320,12 @@ let g:AutoPairsShortcutToggle = ''
 
 " Eval outermost form for clojure
 autocmd FileType clojure nmap <buffer> cpP :Eval<cr>
+
+" Don't center screen on the current line
+" when auto-pairs inserts indented lines
+let g:AutoPairsCenterLine=0
+" Don't insert padding spaces inside pairs { | }
+let g:AutoPairsMapSpace=0
 
 " Custom comment style
 autocmd FileType php setlocal commentstring=//\ %s
