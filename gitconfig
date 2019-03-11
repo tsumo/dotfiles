@@ -40,3 +40,6 @@
     # Abort all diffs with :cq
     trustExitCode = true
 
+[include]
+    path = .gitconfig.local
+
