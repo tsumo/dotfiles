@@ -121,6 +121,9 @@ nmap q: <silent>
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
+" Exit from terminal mode with ESC
+:tnoremap <Esc> <C-\><C-n>
+
 " fzf - open files tracked by git
 nnoremap <C-p> :GFiles<CR>
 " Open files
