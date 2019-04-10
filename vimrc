@@ -259,14 +259,16 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'mhinz/vim-grepper'
-Plug 'pangloss/vim-javascript'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kovisoft/slimv', { 'for': 'lisp' }
 Plug 'docunext/closetag.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'vim-vdebug/vdebug', { 'on': 'VdebugStart' }
-" Plug 'mattn/emmet-vim'
 Plug 'chrisbra/Colorizer'
+" JS, web
+Plug 'pangloss/vim-javascript'
+Plug 'mattn/emmet-vim'
+Plug 'mxw/vim-jsx'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
@@ -289,6 +291,14 @@ call plug#end()
 autocmd VimEnter * if exists('g:loaded_ale') | ALEDisable | endif
 " Toggle ALE
 nmap <leader>al :ALEToggle<CR>
+
+" Emmet
+let g:user_emmet_leader_key='<C-x>'
+let g:user_emmet_settings = {
+    \'javascript.jsx' : {
+    \    'extends' : 'jsx',
+    \},
+\}
 
 " Grepper - search in hidden files
 runtime plugin/grepper.vim
