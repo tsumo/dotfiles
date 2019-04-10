@@ -269,6 +269,7 @@ Plug 'chrisbra/Colorizer'
 Plug 'pangloss/vim-javascript'
 Plug 'mattn/emmet-vim'
 Plug 'mxw/vim-jsx'
+Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
@@ -293,11 +294,11 @@ autocmd VimEnter * if exists('g:loaded_ale') | ALEDisable | endif
 nmap <leader>al :ALEToggle<CR>
 
 " Emmet
-let g:user_emmet_leader_key='<C-x>'
+let g:user_emmet_leader_key='<C-c>'
 let g:user_emmet_settings = {
-    \'javascript.jsx' : {
-    \    'extends' : 'jsx',
-    \},
+\    'javascript.jsx' : {
+     \   'extends' : 'jsx',
+\    },
 \}
 
 " Grepper - search in hidden files
