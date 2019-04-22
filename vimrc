@@ -254,6 +254,7 @@ Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-sleuth'
 Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
@@ -270,6 +271,9 @@ Plug 'pangloss/vim-javascript'
 Plug 'mattn/emmet-vim'
 Plug 'mxw/vim-jsx'
 Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
@@ -300,6 +304,9 @@ let g:user_emmet_settings = {
      \   'extends' : 'jsx',
 \    },
 \}
+
+" Prettier
+nmap <Leader>P <Plug>(Prettier)
 
 " Grepper - search in hidden files
 runtime plugin/grepper.vim
