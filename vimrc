@@ -268,19 +268,14 @@ Plug 'vim-vdebug/vdebug', { 'on': 'VdebugStart' }
 Plug 'chrisbra/Colorizer'
 " JS, web
 Plug 'pangloss/vim-javascript'
-Plug 'mattn/emmet-vim'
-Plug 'mxw/vim-jsx'
-Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'mattn/emmet-vim', { 'for': ['php', 'html'] }
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 " Clojure
 Plug 'tpope/vim-fireplace'
-Plug 'vim-scripts/paredit.vim', { 'for': 'clojure' }
+Plug 'vim-scripts/paredit.vim', { 'for': ['clojure', 'scheme'] }
 " PHP
 Plug 'tobyS/vmustache'
 Plug 'tobyS/pdv', { 'for': 'php' }
@@ -298,15 +293,12 @@ autocmd VimEnter * if exists('g:loaded_ale') | ALEDisable | endif
 nmap <leader>al :ALEToggle<CR>
 
 " Emmet
-let g:user_emmet_leader_key='<C-c>'
+let g:user_emmet_leader_key='<C-x>'
 let g:user_emmet_settings = {
 \    'javascript.jsx' : {
      \   'extends' : 'jsx',
 \    },
 \}
-
-" Prettier
-nmap <Leader>P <Plug>(Prettier)
 
 " Grepper - search in hidden files
 runtime plugin/grepper.vim
@@ -337,7 +329,7 @@ autocmd FileType clojure nmap <buffer> cpt :call RunBufferTests()<cr>
 
 " Skips autopairs init for lisp files
 " since paredit already does that
-au FileType lisp,clojure let b:autopairs_loaded=1
+au FileType lisp,clojure,scheme let b:autopairs_loaded=1
 " Disable toggle shortcut
 let g:AutoPairsShortcutToggle = ''
 
