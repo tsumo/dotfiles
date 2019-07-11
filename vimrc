@@ -59,14 +59,21 @@ set breakindent     " Preserve indentation for wrapped lines
 " Fix slow O inserts
 set timeout timeoutlen=1000 ttimeoutlen=100
 
-" Absolute line numbers for insert mode and unfocused windows
+" Absolute line numbers for insert mode and unfocused buffers
 " Relative line numbers for normal mode
-" Do not enable line numbers inside NERDTree
+" Do not enable line numbers inside utility buffers
 set number relativenumber
+function! CheckBufferType()
+    if !exists("b:NERDTree") && !exists("b:tagbar_mapped_keys") && &filetype != "help"
+        return 1
+    else
+        return 0
+    endif
+endfunction
 augroup numbertoggle
     autocmd!
-    autocmd BufEnter,FocusGained,InsertLeave * if !exists("b:NERDTree") | set relativenumber | endif
-    autocmd BufLeave,FocusLost,InsertEnter   * if !exists("b:NERDTree") | set norelativenumber | endif
+    autocmd BufEnter,FocusGained,InsertLeave * if CheckBufferType() | set relativenumber | endif
+    autocmd BufLeave,FocusLost,InsertEnter   * if CheckBufferType() | set norelativenumber | endif
 augroup END
 
 " Draw crosshair on the cursor position in the current window
@@ -356,6 +363,8 @@ let NERDTreeShowHidden=1
 
 " Open Tagbar
 nmap <leader>tb :TagbarToggle<CR>
+" Hide line numbers
+let g:tagbar_show_linenumbers=0
 
 " Smaller fzf window
 let g:fzf_layout = { 'down': '~20%' }
