@@ -129,7 +129,8 @@ nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
 " Exit from terminal mode with ESC
-:tnoremap <Esc> <C-\><C-n>
+" Check for fzf search window
+tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
 
 " fzf - open files tracked by git
 nnoremap <C-p> :GFiles<CR>
