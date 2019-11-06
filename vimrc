@@ -351,7 +351,7 @@ let g:AutoPairsCenterLine=0
 let g:AutoPairsMapSpace=0
 
 " Custom comment style
-autocmd FileType php setlocal commentstring=//\ %s
+autocmd FileType php,c setlocal commentstring=//\ %s
 
 " Open NERDTree
 nmap <leader>nt :NERDTreeToggle<CR>
