@@ -274,6 +274,7 @@ Plug 'docunext/closetag.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'vim-vdebug/vdebug', { 'on': 'VdebugStart' }
 Plug 'chrisbra/Colorizer'
+Plug 'christoomey/vim-tmux-navigator'
 " JS, web
 Plug 'pangloss/vim-javascript'
 Plug 'mattn/emmet-vim', { 'for': ['php', 'html'] }
